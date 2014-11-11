@@ -25,3 +25,5 @@ Processing by CustomersController#index as JSON
   Parameters: {"last_update"=>"Tue Nov 11 2014 11:47:08 GMT-0500 (EST)"}
   [1m[36mCustomer Load (170.8ms)[0m  [1mEXEC sp_executesql N'SELECT [ARCustomers].* FROM [ARCustomers] WHERE (LastUpdate >= ''11-11-2014'')'[0m
 Completed 200 OK in 185.5ms (Views: 0.2ms | ActiveRecord: 170.8ms)
+Connecting to database specified by database.yml
+  [1m[36mSQL (42.4ms)[0m  [1mUSE [CoTest][0m

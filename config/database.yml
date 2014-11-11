@@ -3,8 +3,8 @@ development:
   host: <%= ENV['DEV_DB_HOST'] %>
   database: <%= ENV['DEV_DB'] %>
   port: <%= ENV['DEV_DB_PORT'] %>
-  username: <%= ENV['DEV_DB_USERNAME'] %>
-  password: <%= ENV['DEV_DB_PASSWORD'] %>
+  username: <%= ENV['DEV_DB_UN'] %>
+  password: <%= ENV['DEV_DB_PW'] %>
 
 production:
   adapter: sqlserver
