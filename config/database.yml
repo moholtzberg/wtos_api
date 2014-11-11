@@ -1,0 +1,15 @@
+development:
+  adapter: sqlserver
+  host: <%= ENV['DEV_DB_HOST'] %>
+  database: <%= ENV['DEV_DB'] %>
+  port: <%= ENV['DEV_DB_PORT'] %>
+  username: <%= ENV['DEV_DB_USERNAME'] %>
+  password: <%= ENV['DEV_DB_PASSWORD'] %>
+
+production:
+  adapter: sqlserver
+  database: <%= ENV['PROD_DB'] %>
+  username: <%= ENV['PROD_DB_USERNAME'] %>
+  password: <%= ENV['PROD_DB_PASSWORD'] %>
+  host: <%= ENV['PROD_DB_HOST'] %>
+  port: <%= ENV['PROD_DB_PORT'] %>
