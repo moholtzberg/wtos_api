@@ -3,11 +3,12 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.16'
 
 gem 'dotenv-rails'
-gem 'tiny_tds'
+gem 'tiny_tds', '~> 0.6.1'
 gem 'activerecord-sqlserver-adapter'
 
 gem 'composite_primary_keys', '~> 5.0.13e'
 gem 'rails_12factor', group: :production
+
 # gem 'faye-websocket'
 # require 'em/pure_ruby'
 # 
@@ -21,7 +22,7 @@ gem 'rails_12factor', group: :production
 # gem 'jbuilder'
 
 # Use unicorn as the app server
-# gem 'unicorn'
+gem 'unicorn'
 
 # Deploy with Capistrano
 # gem 'capistrano'
