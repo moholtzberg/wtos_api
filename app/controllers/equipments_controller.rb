@@ -2,7 +2,7 @@ class EquipmentsController < ApplicationController
   # GET /orders
   # GET /orders.json
   def index
-    time = DateTime.parse(params[:last_update])
+    time = DateTime.parse(params[:last_update]) || DateTime.new
     puts = "---->>>> #{time}"
     @equipments = Equipment.where(["LastUpdate >= ?", time])
     respond_to do |format|

@@ -1,7 +1,7 @@
 class CustomersController < ApplicationController
   
   def index
-    time = DateTime.parse(params[:last_update])
+    time = DateTime.parse(params[:last_update]) || DateTime.new
     puts = "---->>>> #{time}"
     @customers = Customer.where(["LastUpdate >= ?", time])
     respond_to do |format|

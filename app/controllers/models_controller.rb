@@ -2,7 +2,9 @@ class ModelsController < ApplicationController
  # GET /orders
   # GET /orders.json
   def index
-    @models = Model.all
+    time = DateTime.parse(params[:last_update]) || DateTime.new
+    puts = "---->>>> #{time}"
+    @models = Model.where(["LastUpdate >= ?", time])
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @models.to_json(
