@@ -9,7 +9,7 @@ development:
 production:
   adapter: sqlserver
   database: <%= ENV['PROD_DB'] %>
-  username: <%= ENV['PROD_DB_USERNAME'] %>
-  password: <%= ENV['PROD_DB_PASSWORD'] %>
+  username: <%= ENV['PROD_DB_UN'] %>
+  password: <%= ENV['PROD_DB_PW'] %>
   host: <%= ENV['PROD_DB_HOST'] %>
   port: <%= ENV['PROD_DB_PORT'] %>

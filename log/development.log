@@ -1,0 +1,178 @@
+
+
+Started GET "/customers.json?last_update=Tue%20Nov%2011%202014%2011:47:08%20GMT-0500%20(EST)" for 127.0.0.1 at 2014-11-12 09:22:30 -0500
+Processing by CustomersController#index as JSON
+  Parameters: {"last_update"=>"Tue Nov 11 2014 11:47:08 GMT-0500 (EST)"}
+  [1m[35mCustomer Load (47.1ms)[0m  EXEC sp_executesql N'SELECT [ARCustomers].* FROM [ARCustomers] WHERE (LastUpdate >= ''11-11-2014'')'
+Completed 200 OK in 49.1ms (Views: 0.2ms | ActiveRecord: 47.1ms)
+
+
+Started GET "/customers.json" for 127.0.0.1 at 2014-11-12 09:22:34 -0500
+Processing by CustomersController#index as JSON
+Completed 500 Internal Server Error in 0.9ms
+
+TypeError (can't convert DateTime into String):
+  app/controllers/customers_controller.rb:5:in `parse'
+  app/controllers/customers_controller.rb:5:in `index'
+
+
+  Rendered /Users/Moshe/.rvm/gems/ruby-1.9.3-p327/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+  Rendered /Users/Moshe/.rvm/gems/ruby-1.9.3-p327/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+  Rendered /Users/Moshe/.rvm/gems/ruby-1.9.3-p327/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (11.5ms)
+
+
+Started GET "/customers.json" for 127.0.0.1 at 2014-11-12 09:23:25 -0500
+Processing by CustomersController#index as JSON
+Completed 500 Internal Server Error in 0.4ms
+
+TypeError (can't convert nil into String):
+  app/controllers/customers_controller.rb:4:in `parse'
+  app/controllers/customers_controller.rb:4:in `index'
+
+
+  Rendered /Users/Moshe/.rvm/gems/ruby-1.9.3-p327/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+  Rendered /Users/Moshe/.rvm/gems/ruby-1.9.3-p327/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+  Rendered /Users/Moshe/.rvm/gems/ruby-1.9.3-p327/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (9.9ms)
+
+
+Started GET "/customers.json" for 127.0.0.1 at 2014-11-12 09:23:27 -0500
+Processing by CustomersController#index as JSON
+Completed 500 Internal Server Error in 0.3ms
+
+TypeError (can't convert nil into String):
+  app/controllers/customers_controller.rb:4:in `parse'
+  app/controllers/customers_controller.rb:4:in `index'
+
+
+  Rendered /Users/Moshe/.rvm/gems/ruby-1.9.3-p327/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+  Rendered /Users/Moshe/.rvm/gems/ruby-1.9.3-p327/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.8ms)
+  Rendered /Users/Moshe/.rvm/gems/ruby-1.9.3-p327/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (6.4ms)
+
+
+Started GET "/customers.json" for 127.0.0.1 at 2014-11-12 09:23:30 -0500
+Processing by CustomersController#index as JSON
+Completed 500 Internal Server Error in 0.3ms
+
+TypeError (can't convert nil into String):
+  app/controllers/customers_controller.rb:4:in `parse'
+  app/controllers/customers_controller.rb:4:in `index'
+
+
+  Rendered /Users/Moshe/.rvm/gems/ruby-1.9.3-p327/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+  Rendered /Users/Moshe/.rvm/gems/ruby-1.9.3-p327/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.7ms)
+  Rendered /Users/Moshe/.rvm/gems/ruby-1.9.3-p327/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (8.0ms)
+
+
+Started GET "/customers.json?last_update=Sun%20Nov%209%202014%2011:18:56%20GMT-0500%20(EST)" for 127.0.0.1 at 2014-11-12 09:23:37 -0500
+Processing by CustomersController#index as JSON
+  Parameters: {"last_update"=>"Sun Nov 9 2014 11:18:56 GMT-0500 (EST)"}
+  [1m[36mCustomer Load (79.4ms)[0m  [1mEXEC sp_executesql N'SELECT [ARCustomers].* FROM [ARCustomers] WHERE (LastUpdate >= ''11-09-2014'')'[0m
+Completed 200 OK in 82.3ms (Views: 0.2ms | ActiveRecord: 79.4ms)
+
+
+Started GET "/equipments.json?last_update=Wed%20Nov%2012%202014%2009:33:15%20GMT-0500%20(EST)" for 127.0.0.1 at 2014-11-12 09:33:15 -0500
+Processing by EquipmentsController#index as JSON
+  Parameters: {"last_update"=>"Wed Nov 12 2014 09:33:15 GMT-0500 (EST)"}
+  [1m[35mEquipment Load (274.2ms)[0m  EXEC sp_executesql N'SELECT [SCEquipments].* FROM [SCEquipments] WHERE (LastUpdate >= ''11-12-2014'')'
+Completed 200 OK in 277.0ms (Views: 0.2ms | ActiveRecord: 274.2ms)
+
+
+Started GET "/leases.json" for 127.0.0.1 at 2014-11-12 09:33:16 -0500
+Processing by LeasesController#index as JSON
+Completed 500 Internal Server Error in 0.5ms
+
+TypeError (can't convert nil into String):
+  app/controllers/leases_controller.rb:5:in `parse'
+  app/controllers/leases_controller.rb:5:in `index'
+
+
+  Rendered /Users/Moshe/.rvm/gems/ruby-1.9.3-p327/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.6ms)
+  Rendered /Users/Moshe/.rvm/gems/ruby-1.9.3-p327/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.3ms)
+  Rendered /Users/Moshe/.rvm/gems/ruby-1.9.3-p327/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (9.7ms)
+
+
+Started GET "/makes.json" for 127.0.0.1 at 2014-11-12 09:33:16 -0500
+Processing by MakesController#index as JSON
+Completed 500 Internal Server Error in 0.4ms
+
+TypeError (can't convert nil into String):
+  app/controllers/makes_controller.rb:4:in `parse'
+  app/controllers/makes_controller.rb:4:in `index'
+
+
+  Rendered /Users/Moshe/.rvm/gems/ruby-1.9.3-p327/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.9ms)
+  Rendered /Users/Moshe/.rvm/gems/ruby-1.9.3-p327/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+  Rendered /Users/Moshe/.rvm/gems/ruby-1.9.3-p327/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (10.0ms)
+
+
+Started GET "/models.json" for 127.0.0.1 at 2014-11-12 09:33:16 -0500
+Processing by ModelsController#index as JSON
+Completed 500 Internal Server Error in 0.4ms
+
+TypeError (can't convert nil into String):
+  app/controllers/models_controller.rb:5:in `parse'
+  app/controllers/models_controller.rb:5:in `index'
+
+
+  Rendered /Users/Moshe/.rvm/gems/ruby-1.9.3-p327/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+  Rendered /Users/Moshe/.rvm/gems/ruby-1.9.3-p327/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+  Rendered /Users/Moshe/.rvm/gems/ruby-1.9.3-p327/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (6.8ms)
+
+
+Started GET "/makes.json" for 127.0.0.1 at 2014-11-12 09:33:54 -0500
+Processing by MakesController#index as JSON
+Completed 500 Internal Server Error in 0.5ms
+
+TypeError (can't convert nil into String):
+  app/controllers/makes_controller.rb:4:in `parse'
+  app/controllers/makes_controller.rb:4:in `index'
+
+
+  Rendered /Users/Moshe/.rvm/gems/ruby-1.9.3-p327/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+  Rendered /Users/Moshe/.rvm/gems/ruby-1.9.3-p327/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.5ms)
+  Rendered /Users/Moshe/.rvm/gems/ruby-1.9.3-p327/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (8.4ms)
+
+
+Started GET "/models.json" for 127.0.0.1 at 2014-11-12 09:33:55 -0500
+Processing by ModelsController#index as JSON
+Completed 500 Internal Server Error in 0.3ms
+
+TypeError (can't convert nil into String):
+  app/controllers/models_controller.rb:5:in `parse'
+  app/controllers/models_controller.rb:5:in `index'
+
+
+  Rendered /Users/Moshe/.rvm/gems/ruby-1.9.3-p327/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+  Rendered /Users/Moshe/.rvm/gems/ruby-1.9.3-p327/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+  Rendered /Users/Moshe/.rvm/gems/ruby-1.9.3-p327/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (6.9ms)
+
+
+Started GET "/models.json" for 127.0.0.1 at 2014-11-12 09:34:30 -0500
+Processing by ModelsController#index as JSON
+Completed 500 Internal Server Error in 0.3ms
+
+TypeError (can't convert nil into String):
+  app/controllers/models_controller.rb:5:in `parse'
+  app/controllers/models_controller.rb:5:in `index'
+
+
+  Rendered /Users/Moshe/.rvm/gems/ruby-1.9.3-p327/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+  Rendered /Users/Moshe/.rvm/gems/ruby-1.9.3-p327/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+  Rendered /Users/Moshe/.rvm/gems/ruby-1.9.3-p327/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (6.9ms)
+
+
+Started GET "/customers.json?last_update=Wed%20Nov%2012%202014%2015:41:08%20GMT-0500%20(EST)" for 127.0.0.1 at 2014-11-12 15:42:06 -0500
+Processing by CustomersController#index as JSON
+  Parameters: {"last_update"=>"Wed Nov 12 2014 15:41:08 GMT-0500 (EST)"}
+  [1m[36mCustomer Load (51.6ms)[0m  [1mEXEC sp_executesql N'SELECT [ARCustomers].* FROM [ARCustomers] WHERE (LastUpdate >= ''11-12-2014'')'[0m
+TinyTds::Error: DBPROCESS is dead or not enabled: EXEC sp_executesql N'SELECT [ARCustomers].* FROM [ARCustomers] WHERE (LastUpdate >= ''11-12-2014'')'
+Completed 500 Internal Server Error in 55.6ms
+
+ActiveRecord::LostConnection (TinyTds::Error: DBPROCESS is dead or not enabled: EXEC sp_executesql N'SELECT [ARCustomers].* FROM [ARCustomers] WHERE (LastUpdate >= ''11-12-2014'')'):
+  app/controllers/customers_controller.rb:9:in `block (2 levels) in index'
+  app/controllers/customers_controller.rb:7:in `index'
+
+
+  Rendered /Users/Moshe/.rvm/gems/ruby-1.9.3-p327/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.6ms)
+  Rendered /Users/Moshe/.rvm/gems/ruby-1.9.3-p327/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.2ms)
+  Rendered /Users/Moshe/.rvm/gems/ruby-1.9.3-p327/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (11.1ms)
