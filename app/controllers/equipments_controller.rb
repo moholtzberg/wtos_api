@@ -19,7 +19,9 @@ class EquipmentsController < ApplicationController
     @equipment = Equipment.find(params[:id])
     respond_to do |format|
       format.html # show.html.erb
-      format.json { render json: @equipment }
+      format.json { render json: @equipment.to_json(
+        :only => [], 
+        :methods => [:dg_equipment_id, :dg_customer_id, :equipment_number, :equipment_serial, :equipment_model_id,  :equipment_lease_id, :equipment_install_date, :dg_last_update])}
     end
   end
 

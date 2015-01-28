@@ -1,8 +1,8 @@
 ## WTOS API
 
 ### Customers
-`GET "/customers/#{id}.json"` returns a customer object with the following fields
-`{
+`GET "/customers/#{id}.json"` returns a `customer` object with the following fields  
+`{  
 	"dg_customer_id": INT,  
 	"dg_customer_number": STR,  
 	"dg_sales_rep_id": INT,  
@@ -22,16 +22,32 @@
 returns an array of `customer` objects  
   
 ### Leases  
-`GET "/lease/#{id}.json"` returns a lease object with the following fields  
+`GET "/lease/#{id}.json"` returns a `lease` object with the following fields  
 `{  
 	"dg_lease_id": INT,  
-	"lease_customer_id": INT (references a customer from the customers model),  
+	"lease_customer_id": INT (references a customer from the customers data model),  
 	"lease_number": STR,  
 	"lease_term": INT,  
 	"lease_start_date": TIME,  
 	"lease_payment": FLOAT,  
-	"dg_leasing_company_id": INT (references a customers from the customers model as a leasing company)  
+	"dg_leasing_company_id": INT (references a customers from the customers data model as a leasing company)  
 }`  
   
 `GET "/leases.json?last_update=#{date}"`  
 returns an array of `lease` objects
+  
+### Eequipments  
+`GET "/equipments/#{id}.json"` returns a `equipment` object with the following fields  
+`{
+	"dg_equipment_id": INT,
+	"dg_customer_id": INT (references a customer from the customers data model),
+	"equipment_number": STR,
+	"equipment_serial": STR,
+	"equipment_model_id": INT (references a model from the customers data model),
+	"equipment_lease_id": INT (references a lease from the leases data model),
+	"equipment_install_date": TIME,
+	"dg_last_update": TIME
+}`  
+  
+`GET "/equipments.json?last_update=#{date}"`  
+returns an array of `equipment` objects
