@@ -15,7 +15,8 @@ class MakesController < ApplicationController
     @make = Make.find(params[:id])
     respond_to do |format|
       format.html # show.html.erb
-      format.json { render json: @make }
+      format.json { render json: @make.to_json(
+        :only => [], :methods => [:dg_make_id, :make_name, :make_active, :dg_last_update])}
     end
   end
 

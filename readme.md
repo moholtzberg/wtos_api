@@ -51,3 +51,15 @@ returns an array of `lease` objects
   
 `GET "/equipments.json?last_update=#{date}"`  
 returns an array of `equipment` objects
+  
+### Makes  
+`GET "/makes/#{id}.json"` returns a `make` object with the following fields  
+`{
+	"dg_make_id": INT,
+	"make_name": STR,
+	"make_active": BOOL,
+	"dg_last_update": TIME
+}`  
+  
+`GET "/makes.json?last_update=#{date}"`  
+returns an array of `make` objects
