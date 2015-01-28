@@ -19,7 +19,9 @@ class LeasesController < ApplicationController
     @lease = Lease.find(params[:id])
     respond_to do |format|
       format.html # show.html.erb
-      format.json { render json: @lease }
+      format.json { render json: @lease.to_json(
+        :only => [], 
+        :methods => [:dg_lease_id, :lease_customer_id, :lease_number, :lease_term, :lease_start_date, :lease_payment, :dg_leasing_company_id,:dg_lease_last_updated_at])}
     end
   end
 
