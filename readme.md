@@ -4,7 +4,7 @@
 `GET "/customers/#{id}.json"` returns a customer object with the following fields
 `{
 	"dg_customer_id": INT,  
-	"dg_customer_number":STR,  
+	"dg_customer_number": STR,  
 	"dg_sales_rep_id": INT,  
 	"customer_name": STR,  
 	"customer_address": STR,  
@@ -23,7 +23,6 @@ returns an array of `customer` objects
   
 ### Leases  
 `GET "/lease/#{id}.json"` returns a lease object with the following fields  
-  
 `{  
 	"dg_lease_id": INT,  
 	"lease_customer_id": INT (references a customer from the customers model),  
