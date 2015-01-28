@@ -22,7 +22,7 @@
 returns an array of `customer` objects  
   
 ### Leases  
-`GET "/lease/#{id}.json"` returns a `lease` object with the following fields  
+`GET "/leases/#{id}.json"` returns a `lease` object with the following fields  
 `{  
 	"dg_lease_id": INT,  
 	"lease_customer_id": INT (references a customer from the customers data model),  
