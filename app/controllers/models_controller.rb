@@ -20,7 +20,9 @@ class ModelsController < ApplicationController
     @model = Model.find(params[:id])
     respond_to do |format|
       format.html # show.html.erb
-      format.json { render json: @model }
+      format.json { render json: @model.to_json(
+        :only =>[],
+        :methods => [:dg_model_id, :model_make_id, :model_number, :model_description, :model_active, :dg_last_update])}
     end
   end
 

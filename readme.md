@@ -36,7 +36,7 @@ returns an array of `customer` objects
 `GET "/leases.json?last_update=#{date}"`  
 returns an array of `lease` objects
   
-### Eequipments  
+### Equipments  
 `GET "/equipments/#{id}.json"` returns a `equipment` object with the following fields  
 `{
 	"dg_equipment_id": INT,
@@ -63,3 +63,19 @@ returns an array of `equipment` objects
   
 `GET "/makes.json?last_update=#{date}"`  
 returns an array of `make` objects
+  
+### Models  
+`GET "/models/#{id}.json"` returns a `model` object with the following fields  
+`{
+	"dg_model_id": INT,
+	"model_make_id": INT (references a make from the makes data model),
+	"model_number": STR,
+	"model_description": STR,
+	"model_active": BOOL,
+	"dg_last_update": TIME
+}`  
+  
+`GET "/models.json?last_update=#{date}"`  
+returns an array of `model` objects  
+
+
