@@ -1,3 +1,7 @@
+WTOS API
+========
+A wrapper for the dg
+--------------------
 GET "/customers.json?last_update=#{date}"
 returns an array of `customer` objects
 >[
