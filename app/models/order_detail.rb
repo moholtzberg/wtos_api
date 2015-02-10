@@ -2,6 +2,7 @@ class OrderDetail < ActiveRecord::Base
   
   belongs_to :order, :foreign_key => :SOID
   belongs_to :item, :foreign_key => :ItemID
+  belongs_to :equipments, :foreign_key => :EquipmentID
   
   before_validation :make_DetailID, on: :create
   before_validation :make_CreateDate, on: :create

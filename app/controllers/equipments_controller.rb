@@ -2,9 +2,12 @@ class EquipmentsController < ApplicationController
   # GET /orders
   # GET /orders.json
   def index
-    time = DateTime.parse(params[:last_update]) || DateTime.new
-    puts = "---->>>> #{time}"
-    @equipments = Equipment.where(["LastUpdate >= ?", time])
+    puts "params #{params.inspect}"
+    @customer = Customer.find(params[:customer_id])
+    @equipments = @customer.equipments
+    # time = DateTime.parse(params[:last_update]) || DateTime.new
+    # puts = "---->>>> #{time}"
+    # @equipments = Equipment.where(["LastUpdate >= ?", time])
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @equipments.to_json(

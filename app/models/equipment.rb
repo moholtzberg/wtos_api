@@ -2,6 +2,7 @@ class Equipment < ActiveRecord::Base
   include ActiveModel::Serializers::JSON
   
   belongs_to :model, :foreign_key => :ModelID
+  has_many :order_details, :foreign_key => :EquipmentID
   
   self.primary_key = :EquipmentID
   self.table_name = "SCEquipments"

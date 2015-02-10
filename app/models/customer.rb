@@ -11,6 +11,8 @@ class Customer < ActiveRecord::Base
   scope :active, where(Active: true)
   scope :slaes_rep, lambda {|rep| { :conditions => ["SalesRepID = ?", rep] }}
   
+  has_many :equipments, :foreign_key => :CustomerID
+  
   # attr_accessible :bill_to_name
   
   def make_CustomerID

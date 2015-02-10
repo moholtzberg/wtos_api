@@ -1,9 +1,10 @@
-class OrderDatailsController < ApplicationController
+class OrderDetailsController < ApplicationController
   # GET /order_datails
   # GET /order_datails.json
   def index
-    @order_datails = OrderDatail.all
-
+    # equipment = Equipment.find(params[:equipment_id])
+    # @order_datails = equipment.order_details
+    @order_details = OrderDetail.all
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @order_datails }
