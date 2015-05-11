@@ -4,10 +4,9 @@ class OrderDetailsController < ApplicationController
   def index
     # equipment = Equipment.find(params[:equipment_id])
     # @order_datails = equipment.order_details
-    @order_details = OrderDetail.all
+    @order_detail = OrderDetail.find(["EquipmentID >= ?", params[:equipment_id]])
     respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @order_datails }
+      format.json { render json: @order_datail }
     end
   end
 

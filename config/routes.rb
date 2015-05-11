@@ -18,7 +18,7 @@ WtosApi::Application.routes.draw do
     resources :orders
     resources :customers do
       resources :equipments, shallow: true do
-        resources :order_details, shallow: true
+        resources :order_details
       end
     end
     resources :leases
