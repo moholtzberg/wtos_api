@@ -6,7 +6,7 @@ class API::OrderDetailsController < ApplicationController
     # @order_datails = equipment.order_details
     if params[:equipment_id]
       equipment_id = params[:equipment_id].to_i
-      @order_detail = OrderDetail.find(["EquipmentID = ?", equipment_id])
+      @order_detail = OrderDetail.find(["'EquipmentID = ?'", equipment_id])
     elsif params[:order_id]
       order_id = params[:order_id].to_i
       @order_detail = OrderDetail.find(["OrderID = ?", order_id])
