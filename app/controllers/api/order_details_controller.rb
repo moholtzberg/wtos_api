@@ -11,6 +11,8 @@ class API::OrderDetailsController < ApplicationController
       order_id = params[:order_id].to_i
       @order_detail = OrderDetail.where(["OrderID = ?", order_id])
     end
+    puts "==============#{params[:equipment_id].inspect}"
+    puts "--------------#{@order_detail.inspect}"
     respond_to do |format|
       format.json { render json: @order_datail }
     end
