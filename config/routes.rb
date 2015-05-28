@@ -13,13 +13,14 @@ WtosApi::Application.routes.draw do
     resources :co_reg_values
     resources :counters
     resources :items
-    resources :order_datails
+    resources :order_details
     resources :branches
     resources :orders do
       resources :order_details
     end
     resources :customers do
-      resources :equipments
+      resources :equipments do
+        get :order_details
     end
     resources :leases
     resources :models
