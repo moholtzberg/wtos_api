@@ -5,10 +5,9 @@ class API::OrderDetailsController < ApplicationController
     # equipment = Equipment.find(params[:equipment_id])
     # @order_datails = equipment.order_details
     if params[:equipment_id]
-      puts params[:equipment_id].inspect
-      @order_detail = OrderDetail.find(["EquipmentID = ?", params[:equipment_id]])
+      @order_detail = OrderDetail.find(["EquipmentID = ?", params[:equipment_id].to_i])
     elsif params[:order_id]
-      @order_detail = OrderDetail.find(["OrderID = ?", params[:order_id]])
+      @order_detail = OrderDetail.find(["OrderID = ?", params[:order_id].to_i])
     end
     respond_to do |format|
       format.json { render json: @order_datail }
