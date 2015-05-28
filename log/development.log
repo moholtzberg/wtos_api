@@ -2938,3 +2938,1736 @@ EXPLAIN for: SELECT [ARCustomers].* FROM [ARCustomers]
 +----------------------------------------------------+--------+--------+--------+----------------------+----------------------+----------------------------------------------------+----------------------------------------------------+--------------+------------+-------------+------------+------------------+----------------------------------------------------+----------+----------+----------+--------------------+
 
 Completed 200 OK in 172022.3ms (Views: 0.1ms | ActiveRecord: 171845.6ms)
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36mSQL (48.0ms)[0m  [1mUSE [CoDemo][0m
+
+
+Started GET "/assets/rails.png" for 127.0.0.1 at 2015-02-11 11:38:16 -0500
+  [1m[35mSQL (42.1ms)[0m  USE [CoDemo]
+
+ActionController::RoutingError (No route matches [GET] "/assets/rails.png"):
+  actionpack (3.2.16) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.16) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.16) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.16) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.16) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.16) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.16) lib/rails/engine.rb:484:in `call'
+  railties (3.2.16) lib/rails/application.rb:231:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.16) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/Moshe/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/Moshe/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/Moshe/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/Moshe/.rvm/gems/ruby-2.1.2/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.8ms)
+
+
+Started GET "/api/customers" for 127.0.0.1 at 2015-02-11 11:38:20 -0500
+Processing by CustomersController#index as JSON
+  [1m[36mCustomer Load (44.2ms)[0m  [1mEXEC sp_executesql N'SELECT [ARCustomers].* FROM [ARCustomers]'[0m
+Completed 200 OK in 122.2ms (Views: 0.1ms | ActiveRecord: 44.2ms)
+
+
+Started GET "/api/leases" for 127.0.0.1 at 2015-02-11 11:38:29 -0500
+Processing by LeasesController#index as JSON
+Completed 500 Internal Server Error in 2.3ms
+
+TypeError (no implicit conversion of nil into String):
+  app/controllers/leases_controller.rb:5:in `parse'
+  app/controllers/leases_controller.rb:5:in `index'
+
+
+  Rendered /Users/Moshe/.rvm/gems/ruby-2.1.2/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+  Rendered /Users/Moshe/.rvm/gems/ruby-2.1.2/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.3ms)
+  Rendered /Users/Moshe/.rvm/gems/ruby-2.1.2/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (12.6ms)
+
+
+Started GET "/api/equipments/2" for 127.0.0.1 at 2015-02-11 11:38:33 -0500
+Processing by EquipmentsController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[35mEquipment Load (55.3ms)[0m  EXEC sp_executesql N'SELECT TOP (1) [SCEquipments].* FROM [SCEquipments] WHERE [SCEquipments].[EquipmentID] = @0', N'@0 int', @0 = 2  [["EquipmentID", "2"]]
+Completed 200 OK in 137.2ms (Views: 0.1ms | ActiveRecord: 55.3ms)
+
+
+Started GET "/api/equipments/2/order_details" for 127.0.0.1 at 2015-02-11 11:52:35 -0500
+Processing by OrderDetailsController#index as JSON
+  Parameters: {"equipment_id"=>"2"}
+  [1m[36mOrderDetail Load (70.9ms)[0m  [1mEXEC sp_executesql N'SELECT [SOOrderDetails].* FROM [SOOrderDetails]'[0m
+Completed 200 OK in 147.6ms (Views: 0.1ms | ActiveRecord: 70.9ms)
+
+
+Started GET "/api/equipments/1/order_details" for 127.0.0.1 at 2015-02-11 11:52:39 -0500
+Processing by OrderDetailsController#index as JSON
+  Parameters: {"equipment_id"=>"1"}
+  [1m[35mOrderDetail Load (47.2ms)[0m  EXEC sp_executesql N'SELECT [SOOrderDetails].* FROM [SOOrderDetails]'
+Completed 200 OK in 49.6ms (Views: 0.1ms | ActiveRecord: 47.2ms)
+
+
+Started GET "/api/equipments/1/order_details" for 127.0.0.1 at 2015-02-11 11:54:40 -0500
+Processing by OrderDetailsController#index as JSON
+  Parameters: {"equipment_id"=>"1"}
+  [1m[36mOrderDetail Load (50.7ms)[0m  [1mEXEC sp_executesql N'SELECT TOP (1) [SOOrderDetails].* FROM [SOOrderDetails]'[0m
+Completed 200 OK in 108.1ms (Views: 0.1ms | ActiveRecord: 50.7ms)
+
+
+Started GET "/api/equipments/1/order_details" for 127.0.0.1 at 2015-02-11 11:54:43 -0500
+Processing by OrderDetailsController#index as JSON
+  Parameters: {"equipment_id"=>"1"}
+  [1m[35mOrderDetail Load (43.1ms)[0m  EXEC sp_executesql N'SELECT TOP (1) [SOOrderDetails].* FROM [SOOrderDetails]'
+Completed 200 OK in 44.5ms (Views: 0.1ms | ActiveRecord: 43.1ms)
+Connecting to database specified by database.yml
+  [1m[36mSQL (46.4ms)[0m  [1mUSE [CoDemo][0m
+Connecting to database specified by database.yml
+  [1m[36mSQL (44.9ms)[0m  [1mUSE [CoDemo][0m
+
+
+Started GET "/api/equipments/1/order_details" for 127.0.0.1 at 2015-02-11 11:56:23 -0500
+  [1m[35mSQL (44.8ms)[0m  USE [CoDemo]
+Processing by OrderDetailsController#index as JSON
+  Parameters: {"equipment_id"=>"1"}
+  [1m[36mOrderDetail Load (41.5ms)[0m  [1mEXEC sp_executesql N'SELECT TOP (1) [SOOrderDetails].* FROM [SOOrderDetails]'[0m
+Completed 200 OK in 108.8ms (Views: 0.1ms | ActiveRecord: 41.5ms)
+Connecting to database specified by database.yml
+  [1m[36mSQL (39.9ms)[0m  [1mUSE [CoDemo][0m
+
+
+Started GET "/api/equipments/1/order_details" for 127.0.0.1 at 2015-02-11 11:57:46 -0500
+  [1m[35mSQL (41.8ms)[0m  USE [CoDemo]
+Processing by OrderDetailsController#index as JSON
+  Parameters: {"equipment_id"=>"1"}
+  [1m[36mOrderDetail Load (42.1ms)[0m  [1mEXEC sp_executesql N'SELECT TOP (1) [SOOrderDetails].* FROM [SOOrderDetails]'[0m
+Completed 200 OK in 103.4ms (Views: 0.1ms | ActiveRecord: 42.1ms)
+
+
+Started GET "/api/equipments/1/order_details" for 127.0.0.1 at 2015-02-11 11:58:49 -0500
+Processing by OrderDetailsController#index as JSON
+  Parameters: {"equipment_id"=>"1"}
+  [1m[35mOrderDetail Load (50.8ms)[0m  EXEC sp_executesql N'SELECT TOP (1) [SOOrderDetails].* FROM [SOOrderDetails]'
+Completed 200 OK in 116.8ms (Views: 0.1ms | ActiveRecord: 50.8ms)
+
+
+Started GET "/api/equipments/2/order_details" for 127.0.0.1 at 2015-02-11 11:58:59 -0500
+Processing by OrderDetailsController#index as JSON
+  Parameters: {"equipment_id"=>"2"}
+  [1m[36mOrderDetail Load (57.4ms)[0m  [1mEXEC sp_executesql N'SELECT TOP (1) [SOOrderDetails].* FROM [SOOrderDetails]'[0m
+Completed 200 OK in 59.7ms (Views: 0.1ms | ActiveRecord: 57.4ms)
+
+
+Started GET "/api/equipments/2/order_details" for 127.0.0.1 at 2015-02-11 12:00:08 -0500
+Processing by OrderDetailsController#index as JSON
+  Parameters: {"equipment_id"=>"2"}
+Completed 200 OK in 8.9ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/equipments/2/order_details" for 127.0.0.1 at 2015-02-11 12:00:43 -0500
+Processing by OrderDetailsController#index as JSON
+  Parameters: {"equipment_id"=>"2"}
+Completed 200 OK in 0.9ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/equipments/2/order_details" for 127.0.0.1 at 2015-02-11 12:01:26 -0500
+Processing by OrderDetailsController#index as JSON
+  Parameters: {"equipment_id"=>"2"}
+  [1m[35mOrderDetail Load (93.3ms)[0m  EXEC sp_executesql N'SELECT [SOOrderDetails].* FROM [SOOrderDetails] WHERE [SOOrderDetails].[EquipmentID] = N''2'''
+Completed 200 OK in 155.6ms (Views: 0.3ms | ActiveRecord: 93.3ms)
+
+
+Started GET "/api/equipments/2/order_details" for 127.0.0.1 at 2015-02-11 12:02:34 -0500
+Processing by OrderDetailsController#index as JSON
+  Parameters: {"equipment_id"=>"2"}
+  [1m[36mOrderDetail Load (57.5ms)[0m  [1mEXEC sp_executesql N'SELECT TOP (1) [SOOrderDetails].* FROM [SOOrderDetails] WHERE [SOOrderDetails].[EquipmentID] = N''2'''[0m
+Completed 200 OK in 122.9ms (Views: 0.3ms | ActiveRecord: 57.5ms)
+
+
+Started GET "/api/equipments/3/order_details" for 127.0.0.1 at 2015-02-11 12:02:45 -0500
+Processing by OrderDetailsController#index as JSON
+  Parameters: {"equipment_id"=>"3"}
+  [1m[35mOrderDetail Load (49.6ms)[0m  EXEC sp_executesql N'SELECT TOP (1) [SOOrderDetails].* FROM [SOOrderDetails] WHERE [SOOrderDetails].[EquipmentID] = N''3'''
+Completed 200 OK in 52.4ms (Views: 0.1ms | ActiveRecord: 49.6ms)
+
+
+Started GET "/api/equipments/3/order_details" for 127.0.0.1 at 2015-02-11 12:02:58 -0500
+Processing by OrderDetailsController#index as JSON
+  Parameters: {"equipment_id"=>"3"}
+  [1m[36mOrderDetail Load (48.5ms)[0m  [1mEXEC sp_executesql N'SELECT [SOOrderDetails].* FROM [SOOrderDetails] WHERE [SOOrderDetails].[EquipmentID] = N''3'''[0m
+Completed 200 OK in 111.3ms (Views: 0.1ms | ActiveRecord: 48.5ms)
+
+
+Started GET "/api/equipments/3/order_details" for 127.0.0.1 at 2015-02-11 12:03:32 -0500
+Processing by OrderDetailsController#index as JSON
+  Parameters: {"equipment_id"=>"3"}
+Completed 200 OK in 0.7ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/equipments/3/order_details" for 127.0.0.1 at 2015-02-11 12:03:34 -0500
+Processing by OrderDetailsController#index as JSON
+  Parameters: {"equipment_id"=>"3"}
+Completed 200 OK in 0.6ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/equipments/1/order_details" for 127.0.0.1 at 2015-02-11 12:03:55 -0500
+Processing by OrderDetailsController#index as JSON
+  Parameters: {"equipment_id"=>"1"}
+Completed 200 OK in 0.6ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/equipments/4/order_details" for 127.0.0.1 at 2015-02-11 12:04:01 -0500
+Processing by OrderDetailsController#index as JSON
+  Parameters: {"equipment_id"=>"4"}
+Completed 200 OK in 0.6ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/equipments/4/order_details" for 127.0.0.1 at 2015-02-11 12:04:40 -0500
+Processing by OrderDetailsController#index as JSON
+  Parameters: {"equipment_id"=>"4"}
+Completed 500 Internal Server Error in 10.4ms
+
+ActionView::MissingTemplate (Missing template order_details/index, application/index with {:locale=>[:en], :formats=>[:json], :handlers=>[:erb, :builder]}. Searched in:
+  * "/Users/Moshe/rails_apps/wtos_api/app/views"
+):
+  actionpack (3.2.16) lib/action_view/path_set.rb:58:in `find'
+  actionpack (3.2.16) lib/action_view/lookup_context.rb:122:in `find'
+  actionpack (3.2.16) lib/action_view/renderer/abstract_renderer.rb:3:in `find_template'
+  actionpack (3.2.16) lib/action_view/renderer/template_renderer.rb:34:in `determine_template'
+  actionpack (3.2.16) lib/action_view/renderer/template_renderer.rb:10:in `render'
+  actionpack (3.2.16) lib/action_view/renderer/renderer.rb:36:in `render_template'
+  actionpack (3.2.16) lib/action_view/renderer/renderer.rb:17:in `render'
+  actionpack (3.2.16) lib/abstract_controller/rendering.rb:110:in `_render_template'
+  actionpack (3.2.16) lib/action_controller/metal/streaming.rb:225:in `_render_template'
+  actionpack (3.2.16) lib/abstract_controller/rendering.rb:103:in `render_to_body'
+  actionpack (3.2.16) lib/action_controller/metal/renderers.rb:28:in `render_to_body'
+  actionpack (3.2.16) lib/action_controller/metal/compatibility.rb:50:in `render_to_body'
+  actionpack (3.2.16) lib/abstract_controller/rendering.rb:88:in `render'
+  actionpack (3.2.16) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (3.2.16) lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+  activesupport (3.2.16) lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+  /Users/Moshe/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/benchmark.rb:294:in `realtime'
+  activesupport (3.2.16) lib/active_support/core_ext/benchmark.rb:5:in `ms'
+  actionpack (3.2.16) lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+  actionpack (3.2.16) lib/action_controller/metal/instrumentation.rb:83:in `cleanup_view_runtime'
+  activerecord (3.2.16) lib/active_record/railties/controller_runtime.rb:24:in `cleanup_view_runtime'
+  actionpack (3.2.16) lib/action_controller/metal/instrumentation.rb:39:in `render'
+  actionpack (3.2.16) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (3.2.16) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (3.2.16) lib/abstract_controller/base.rb:167:in `process_action'
+  actionpack (3.2.16) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (3.2.16) lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+  activesupport (3.2.16) lib/active_support/callbacks.rb:414:in `_run__86675386064151887__process_action__1234774318025821996__callbacks'
+  activesupport (3.2.16) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.16) lib/active_support/callbacks.rb:385:in `_run_process_action_callbacks'
+  activesupport (3.2.16) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.16) lib/abstract_controller/callbacks.rb:17:in `process_action'
+  actionpack (3.2.16) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (3.2.16) lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+  activesupport (3.2.16) lib/active_support/notifications.rb:123:in `block in instrument'
+  activesupport (3.2.16) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (3.2.16) lib/active_support/notifications.rb:123:in `instrument'
+  actionpack (3.2.16) lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+  actionpack (3.2.16) lib/action_controller/metal/params_wrapper.rb:207:in `process_action'
+  activerecord (3.2.16) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (3.2.16) lib/abstract_controller/base.rb:121:in `process'
+  actionpack (3.2.16) lib/abstract_controller/rendering.rb:45:in `process'
+  actionpack (3.2.16) lib/action_controller/metal.rb:203:in `dispatch'
+  actionpack (3.2.16) lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+  actionpack (3.2.16) lib/action_controller/metal.rb:246:in `block in action'
+  actionpack (3.2.16) lib/action_dispatch/routing/route_set.rb:73:in `call'
+  actionpack (3.2.16) lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+  actionpack (3.2.16) lib/action_dispatch/routing/route_set.rb:36:in `call'
+  journey (1.0.4) lib/journey/router.rb:68:in `block in call'
+  journey (1.0.4) lib/journey/router.rb:56:in `each'
+  journey (1.0.4) lib/journey/router.rb:56:in `call'
+  actionpack (3.2.16) lib/action_dispatch/routing/route_set.rb:608:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.5) lib/rack/etag.rb:23:in `call'
+  rack (1.4.5) lib/rack/conditionalget.rb:25:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:210:in `context'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:205:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/cookies.rb:341:in `call'
+  activerecord (3.2.16) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.16) lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.16) lib/active_support/callbacks.rb:405:in `_run__917919697766858521__call__3007443483795861890__callbacks'
+  activesupport (3.2.16) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.16) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.16) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.16) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.16) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.16) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.16) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.16) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.16) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.16) lib/rails/engine.rb:484:in `call'
+  railties (3.2.16) lib/rails/application.rb:231:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.16) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/Moshe/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/Moshe/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/Moshe/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/Moshe/.rvm/gems/ruby-2.1.2/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (1.6ms)
+
+
+Started GET "/api/equipments/4/order_details" for 127.0.0.1 at 2015-02-11 12:05:07 -0500
+
+SyntaxError (/Users/Moshe/rails_apps/wtos_api/app/controllers/order_details_controller.rb:10: syntax error, unexpected ':', expecting '}'
+      format.json { json: @order_datails }
+                         ^):
+  activesupport (3.2.16) lib/active_support/dependencies.rb:469:in `load'
+  activesupport (3.2.16) lib/active_support/dependencies.rb:469:in `block in load_file'
+  activesupport (3.2.16) lib/active_support/dependencies.rb:639:in `new_constants_in'
+  activesupport (3.2.16) lib/active_support/dependencies.rb:468:in `load_file'
+  activesupport (3.2.16) lib/active_support/dependencies.rb:353:in `require_or_load'
+  activesupport (3.2.16) lib/active_support/dependencies.rb:502:in `load_missing_constant'
+  activesupport (3.2.16) lib/active_support/dependencies.rb:192:in `block in const_missing'
+  activesupport (3.2.16) lib/active_support/dependencies.rb:190:in `each'
+  activesupport (3.2.16) lib/active_support/dependencies.rb:190:in `const_missing'
+  activesupport (3.2.16) lib/active_support/dependencies.rb:514:in `load_missing_constant'
+  activesupport (3.2.16) lib/active_support/dependencies.rb:192:in `block in const_missing'
+  activesupport (3.2.16) lib/active_support/dependencies.rb:190:in `each'
+  activesupport (3.2.16) lib/active_support/dependencies.rb:190:in `const_missing'
+  activesupport (3.2.16) lib/active_support/inflector/methods.rb:230:in `block in constantize'
+  activesupport (3.2.16) lib/active_support/inflector/methods.rb:229:in `each'
+  activesupport (3.2.16) lib/active_support/inflector/methods.rb:229:in `constantize'
+  activesupport (3.2.16) lib/active_support/dependencies.rb:554:in `get'
+  actionpack (3.2.16) lib/action_dispatch/routing/route_set.rb:69:in `controller_reference'
+  actionpack (3.2.16) lib/action_dispatch/routing/route_set.rb:54:in `controller'
+  actionpack (3.2.16) lib/action_dispatch/routing/route_set.rb:32:in `call'
+  journey (1.0.4) lib/journey/router.rb:68:in `block in call'
+  journey (1.0.4) lib/journey/router.rb:56:in `each'
+  journey (1.0.4) lib/journey/router.rb:56:in `call'
+  actionpack (3.2.16) lib/action_dispatch/routing/route_set.rb:608:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.5) lib/rack/etag.rb:23:in `call'
+  rack (1.4.5) lib/rack/conditionalget.rb:25:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:210:in `context'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:205:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/cookies.rb:341:in `call'
+  activerecord (3.2.16) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.16) lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.16) lib/active_support/callbacks.rb:405:in `_run__917919697766858521__call__3007443483795861890__callbacks'
+  activesupport (3.2.16) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.16) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.16) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.16) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.16) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.16) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.16) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.16) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.16) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.16) lib/rails/engine.rb:484:in `call'
+  railties (3.2.16) lib/rails/application.rb:231:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.16) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/Moshe/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/Moshe/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/Moshe/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/Moshe/.rvm/gems/ruby-2.1.2/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+  Rendered /Users/Moshe/.rvm/gems/ruby-2.1.2/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+  Rendered /Users/Moshe/.rvm/gems/ruby-2.1.2/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (8.9ms)
+
+
+Started GET "/api/equipments/4/order_details" for 127.0.0.1 at 2015-02-11 12:05:20 -0500
+
+SyntaxError (/Users/Moshe/rails_apps/wtos_api/app/controllers/order_details_controller.rb:10: syntax error, unexpected tIVAR, expecting '}'
+      format.json { :json @order_datails }
+                                        ^):
+  activesupport (3.2.16) lib/active_support/dependencies.rb:469:in `load'
+  activesupport (3.2.16) lib/active_support/dependencies.rb:469:in `block in load_file'
+  activesupport (3.2.16) lib/active_support/dependencies.rb:639:in `new_constants_in'
+  activesupport (3.2.16) lib/active_support/dependencies.rb:468:in `load_file'
+  activesupport (3.2.16) lib/active_support/dependencies.rb:353:in `require_or_load'
+  activesupport (3.2.16) lib/active_support/dependencies.rb:502:in `load_missing_constant'
+  activesupport (3.2.16) lib/active_support/dependencies.rb:192:in `block in const_missing'
+  activesupport (3.2.16) lib/active_support/dependencies.rb:190:in `each'
+  activesupport (3.2.16) lib/active_support/dependencies.rb:190:in `const_missing'
+  activesupport (3.2.16) lib/active_support/dependencies.rb:514:in `load_missing_constant'
+  activesupport (3.2.16) lib/active_support/dependencies.rb:192:in `block in const_missing'
+  activesupport (3.2.16) lib/active_support/dependencies.rb:190:in `each'
+  activesupport (3.2.16) lib/active_support/dependencies.rb:190:in `const_missing'
+  activesupport (3.2.16) lib/active_support/inflector/methods.rb:230:in `block in constantize'
+  activesupport (3.2.16) lib/active_support/inflector/methods.rb:229:in `each'
+  activesupport (3.2.16) lib/active_support/inflector/methods.rb:229:in `constantize'
+  activesupport (3.2.16) lib/active_support/dependencies.rb:554:in `get'
+  actionpack (3.2.16) lib/action_dispatch/routing/route_set.rb:69:in `controller_reference'
+  actionpack (3.2.16) lib/action_dispatch/routing/route_set.rb:54:in `controller'
+  actionpack (3.2.16) lib/action_dispatch/routing/route_set.rb:32:in `call'
+  journey (1.0.4) lib/journey/router.rb:68:in `block in call'
+  journey (1.0.4) lib/journey/router.rb:56:in `each'
+  journey (1.0.4) lib/journey/router.rb:56:in `call'
+  actionpack (3.2.16) lib/action_dispatch/routing/route_set.rb:608:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.5) lib/rack/etag.rb:23:in `call'
+  rack (1.4.5) lib/rack/conditionalget.rb:25:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:210:in `context'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:205:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/cookies.rb:341:in `call'
+  activerecord (3.2.16) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.16) lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.16) lib/active_support/callbacks.rb:405:in `_run__917919697766858521__call__3007443483795861890__callbacks'
+  activesupport (3.2.16) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.16) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.16) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.16) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.16) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.16) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.16) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.16) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.16) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.16) lib/rails/engine.rb:484:in `call'
+  railties (3.2.16) lib/rails/application.rb:231:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.16) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/Moshe/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/Moshe/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/Moshe/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/Moshe/.rvm/gems/ruby-2.1.2/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+  Rendered /Users/Moshe/.rvm/gems/ruby-2.1.2/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+  Rendered /Users/Moshe/.rvm/gems/ruby-2.1.2/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (7.4ms)
+
+
+Started GET "/api/equipments/4/order_details" for 127.0.0.1 at 2015-02-11 12:05:35 -0500
+Processing by OrderDetailsController#index as JSON
+  Parameters: {"equipment_id"=>"4"}
+Completed 200 OK in 0.8ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/equipments/4" for 127.0.0.1 at 2015-02-11 12:05:45 -0500
+Processing by EquipmentsController#show as JSON
+  Parameters: {"id"=>"4"}
+  [1m[35mEquipment Load (54.0ms)[0m  EXEC sp_executesql N'SELECT TOP (1) [SCEquipments].* FROM [SCEquipments] WHERE [SCEquipments].[EquipmentID] = @0', N'@0 int', @0 = 4  [["EquipmentID", "4"]]
+Completed 404 Not Found in 60.8ms
+
+ActiveRecord::RecordNotFound (Couldn't find Equipment with EquipmentID=4):
+  app/controllers/equipments_controller.rb:22:in `show'
+
+
+  Rendered /Users/Moshe/.rvm/gems/ruby-2.1.2/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.2ms)
+  Rendered /Users/Moshe/.rvm/gems/ruby-2.1.2/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.4ms)
+  Rendered /Users/Moshe/.rvm/gems/ruby-2.1.2/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (8.7ms)
+
+
+Started GET "/api/equipments/1" for 127.0.0.1 at 2015-02-11 12:05:48 -0500
+Processing by EquipmentsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mEquipment Load (51.9ms)[0m  [1mEXEC sp_executesql N'SELECT TOP (1) [SCEquipments].* FROM [SCEquipments] WHERE [SCEquipments].[EquipmentID] = @0', N'@0 int', @0 = 1[0m  [["EquipmentID", "1"]]
+Completed 200 OK in 150.3ms (Views: 0.1ms | ActiveRecord: 51.9ms)
+
+
+Started GET "/api/equipments/1/order_details" for 127.0.0.1 at 2015-02-11 12:05:54 -0500
+Processing by OrderDetailsController#index as JSON
+  Parameters: {"equipment_id"=>"1"}
+Completed 200 OK in 0.8ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/equipments/1/order_details" for 127.0.0.1 at 2015-02-11 12:06:32 -0500
+Processing by OrderDetailsController#index as JSON
+  Parameters: {"equipment_id"=>"1"}
+Completed 200 OK in 0.7ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/equipments/1/order_details" for 127.0.0.1 at 2015-02-11 12:06:41 -0500
+Processing by OrderDetailsController#index as JSON
+  Parameters: {"equipment_id"=>"1"}
+Completed 200 OK in 0.5ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/equipments/1/order_details" for 127.0.0.1 at 2015-02-11 12:08:58 -0500
+Processing by OrderDetailsController#index as JSON
+  Parameters: {"equipment_id"=>"1"}
+Completed 200 OK in 0.5ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/order_details/1" for 127.0.0.1 at 2015-02-11 12:09:10 -0500
+Processing by OrderDetailsController#show as JSON
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 1.6ms
+
+NameError (uninitialized constant OrderDetailsController::OrderDatail):
+  app/controllers/order_details_controller.rb:17:in `show'
+
+
+  Rendered /Users/Moshe/.rvm/gems/ruby-2.1.2/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+  Rendered /Users/Moshe/.rvm/gems/ruby-2.1.2/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.3ms)
+  Rendered /Users/Moshe/.rvm/gems/ruby-2.1.2/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (8.0ms)
+
+
+Started GET "/api/order_details/1" for 127.0.0.1 at 2015-02-11 12:09:58 -0500
+Processing by OrderDetailsController#show as JSON
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 0.5ms
+
+RuntimeError (["1"]: Incorrect number of primary keys for OrderDetail: ["SOID", "DetailID"]):
+  app/controllers/order_details_controller.rb:17:in `show'
+
+
+  Rendered /Users/Moshe/.rvm/gems/ruby-2.1.2/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+  Rendered /Users/Moshe/.rvm/gems/ruby-2.1.2/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+  Rendered /Users/Moshe/.rvm/gems/ruby-2.1.2/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (6.6ms)
+
+
+Started GET "/api/order_details/1" for 127.0.0.1 at 2015-02-11 12:31:19 -0500
+Processing by OrderDetailsController#show as JSON
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 0.3ms
+
+RuntimeError (["1"]: Incorrect number of primary keys for OrderDetail: ["SOID", "DetailID"]):
+  app/controllers/order_details_controller.rb:17:in `show'
+
+
+  Rendered /Users/Moshe/.rvm/gems/ruby-2.1.2/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+  Rendered /Users/Moshe/.rvm/gems/ruby-2.1.2/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+  Rendered /Users/Moshe/.rvm/gems/ruby-2.1.2/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (8.1ms)
+
+
+Started GET "/api/order_details/1" for 127.0.0.1 at 2015-02-11 12:39:49 -0500
+Processing by OrderDetailsController#show as JSON
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 0.4ms
+
+RuntimeError (["1"]: Incorrect number of primary keys for OrderDetail: ["SOID", "DetailID"]):
+  app/controllers/order_details_controller.rb:17:in `show'
+
+
+  Rendered /Users/Moshe/.rvm/gems/ruby-2.1.2/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+  Rendered /Users/Moshe/.rvm/gems/ruby-2.1.2/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.9ms)
+  Rendered /Users/Moshe/.rvm/gems/ruby-2.1.2/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (10.0ms)
+
+
+Started GET "/api/order_details/1/2" for 127.0.0.1 at 2015-02-11 12:40:34 -0500
+
+ActionController::RoutingError (No route matches [GET] "/api/order_details/1/2"):
+  actionpack (3.2.16) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.16) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.16) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.16) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.16) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.16) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.16) lib/rails/engine.rb:484:in `call'
+  railties (3.2.16) lib/rails/application.rb:231:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.16) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/Moshe/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/Moshe/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/Moshe/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/Moshe/.rvm/gems/ruby-2.1.2/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/api/order_details/1/" for 127.0.0.1 at 2015-02-11 12:40:50 -0500
+Processing by OrderDetailsController#show as JSON
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 0.6ms
+
+NoMethodError (undefined method `split' for 1:Fixnum):
+  app/controllers/order_details_controller.rb:17:in `show'
+
+
+  Rendered /Users/Moshe/.rvm/gems/ruby-2.1.2/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+  Rendered /Users/Moshe/.rvm/gems/ruby-2.1.2/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.3ms)
+  Rendered /Users/Moshe/.rvm/gems/ruby-2.1.2/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (7.0ms)
+
+
+Started GET "/api/order_details/1/" for 127.0.0.1 at 2015-02-11 12:41:04 -0500
+Processing by OrderDetailsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[35mOrderDetail Load (143.4ms)[0m  EXEC sp_executesql N'SELECT [SOOrderDetails].* FROM [SOOrderDetails] WHERE [SOOrderDetails].[SOID] = 1 AND [SOOrderDetails].[DetailID] = 1'
+Completed 200 OK in 209.8ms (Views: 5.7ms | ActiveRecord: 143.4ms)
+
+
+Started GET "/api/equipments/1/order_details" for 127.0.0.1 at 2015-02-11 12:41:30 -0500
+Processing by OrderDetailsController#index as JSON
+  Parameters: {"equipment_id"=>"1"}
+Completed 200 OK in 1.2ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/equipments/1/order_details" for 127.0.0.1 at 2015-02-11 12:41:31 -0500
+Processing by OrderDetailsController#index as JSON
+  Parameters: {"equipment_id"=>"1"}
+Completed 200 OK in 0.5ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/equipment/1/order_details" for 127.0.0.1 at 2015-02-11 12:41:36 -0500
+
+ActionController::RoutingError (No route matches [GET] "/api/equipment/1/order_details"):
+  actionpack (3.2.16) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.16) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.16) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.16) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.16) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.16) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.16) lib/rails/engine.rb:484:in `call'
+  railties (3.2.16) lib/rails/application.rb:231:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.16) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/Moshe/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/Moshe/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/Moshe/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/Moshe/.rvm/gems/ruby-2.1.2/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.6ms)
+
+
+Started GET "/api/equipments/1/order_details" for 127.0.0.1 at 2015-02-11 12:41:47 -0500
+Processing by OrderDetailsController#index as JSON
+  Parameters: {"equipment_id"=>"1"}
+Completed 200 OK in 0.6ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/equipments/1/order_details" for 127.0.0.1 at 2015-02-11 12:42:45 -0500
+Processing by OrderDetailsController#index as JSON
+  Parameters: {"equipment_id"=>"1"}
+Completed 500 Internal Server Error in 0.9ms
+
+ArgumentError (Unknown key: EquipmentID):
+  app/controllers/order_details_controller.rb:7:in `index'
+
+
+  Rendered /Users/Moshe/.rvm/gems/ruby-2.1.2/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+  Rendered /Users/Moshe/.rvm/gems/ruby-2.1.2/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.2ms)
+  Rendered /Users/Moshe/.rvm/gems/ruby-2.1.2/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (7.3ms)
+
+
+Started GET "/api/equipments/1/order_details" for 127.0.0.1 at 2015-02-11 16:16:20 -0500
+TinyTds::Error: DBPROCESS is dead or not enabled: SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' ORDER BY TABLE_NAME
+
+ActiveRecord::LostConnection (TinyTds::Error: DBPROCESS is dead or not enabled: SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE' ORDER BY TABLE_NAME):
+  app/controllers/order_details_controller.rb:1:in `<top (required)>'
+
+
+  Rendered /Users/Moshe/.rvm/gems/ruby-2.1.2/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.7ms)
+  Rendered /Users/Moshe/.rvm/gems/ruby-2.1.2/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.5ms)
+  Rendered /Users/Moshe/.rvm/gems/ruby-2.1.2/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (16.4ms)
+
+
+Started GET "/api/equipments/1/order_details" for 127.0.0.1 at 2015-02-11 16:16:30 -0500
+
+TinyTds::Error (Adaptive Server connection timed out):
+  tiny_tds (0.6.2) lib/tiny_tds/client.rb:77:in `connect'
+  tiny_tds (0.6.2) lib/tiny_tds/client.rb:77:in `initialize'
+  activerecord-sqlserver-adapter (3.2.12) lib/active_record/connection_adapters/sqlserver_adapter.rb:417:in `new'
+  activerecord-sqlserver-adapter (3.2.12) lib/active_record/connection_adapters/sqlserver_adapter.rb:417:in `connect'
+  activerecord-sqlserver-adapter (3.2.12) lib/active_record/connection_adapters/sqlserver_adapter.rb:288:in `reconnect!'
+  activerecord (3.2.16) lib/active_record/connection_adapters/abstract_adapter.rb:219:in `verify!'
+  activerecord (3.2.16) lib/active_record/connection_adapters/abstract/connection_pool.rb:333:in `block in checkout_and_verify'
+  activesupport (3.2.16) lib/active_support/callbacks.rb:403:in `_run__383156939202103162__checkout__3007443483795861890__callbacks'
+  activesupport (3.2.16) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.16) lib/active_support/callbacks.rb:385:in `_run_checkout_callbacks'
+  activesupport (3.2.16) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  activerecord (3.2.16) lib/active_record/connection_adapters/abstract/connection_pool.rb:332:in `checkout_and_verify'
+  activerecord (3.2.16) lib/active_record/connection_adapters/abstract/connection_pool.rb:253:in `block (2 levels) in checkout'
+  activerecord (3.2.16) lib/active_record/connection_adapters/abstract/connection_pool.rb:242:in `loop'
+  activerecord (3.2.16) lib/active_record/connection_adapters/abstract/connection_pool.rb:242:in `block in checkout'
+  /Users/Moshe/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/monitor.rb:211:in `mon_synchronize'
+  activerecord (3.2.16) lib/active_record/connection_adapters/abstract/connection_pool.rb:239:in `checkout'
+  activerecord (3.2.16) lib/active_record/connection_adapters/abstract/connection_pool.rb:102:in `block in connection'
+  /Users/Moshe/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/monitor.rb:211:in `mon_synchronize'
+  activerecord (3.2.16) lib/active_record/connection_adapters/abstract/connection_pool.rb:101:in `connection'
+  activerecord (3.2.16) lib/active_record/connection_adapters/abstract/connection_pool.rb:410:in `retrieve_connection'
+  composite_primary_keys (5.0.14) lib/composite_primary_keys/connection_adapters/abstract/connection_specification_changes.rb:47:in `retrieve_connection'
+  composite_primary_keys (5.0.14) lib/composite_primary_keys/connection_adapters/abstract/connection_specification_changes.rb:29:in `connection'
+  activerecord (3.2.16) lib/active_record/query_cache.rb:61:in `call'
+  activerecord (3.2.16) lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.16) lib/active_support/callbacks.rb:405:in `_run__917919697766858521__call__3007443483795861890__callbacks'
+  activesupport (3.2.16) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.16) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.16) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.16) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.16) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.16) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.16) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.16) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.16) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.16) lib/rails/engine.rb:484:in `call'
+  railties (3.2.16) lib/rails/application.rb:231:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.16) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/Moshe/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/Moshe/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/Moshe/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/Moshe/.rvm/gems/ruby-2.1.2/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+  Rendered /Users/Moshe/.rvm/gems/ruby-2.1.2/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+  Rendered /Users/Moshe/.rvm/gems/ruby-2.1.2/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (7.2ms)
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36mSQL (74.0ms)[0m  [1mUSE [CoDemo][0m
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36mSQL (40.3ms)[0m  [1mUSE [CoDemo][0m
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36mSQL (40.3ms)[0m  [1mUSE [CoWTOS][0m
+Connecting to database specified by database.yml
+  [1m[36mSQL (41.6ms)[0m  [1mUSE [CoWTOS][0m
+
+
+Started GET "/api/equipments/1/order_details" for 127.0.0.1 at 2015-05-11 13:21:49 -0400
+  [1m[35mSQL (45.2ms)[0m  USE [CoWTOS]
+Processing by OrderDetailsController#index as JSON
+  Parameters: {"equipment_id"=>"1"}
+  [1m[36mOrderDetail Load (146.0ms)[0m  [1mEXEC sp_executesql N'SELECT [SOOrderDetails].* FROM [SOOrderDetails] WHERE [SOOrderDetails].[SOID] = N''EquipmentID >= ?'' AND [SOOrderDetails].[DetailID] = N''1'''[0m
+TinyTds::Error: Conversion failed when converting the nvarchar value 'EquipmentID >= ?' to data type int.: EXEC sp_executesql N'SELECT [SOOrderDetails].* FROM [SOOrderDetails] WHERE [SOOrderDetails].[SOID] = N''EquipmentID >= ?'' AND [SOOrderDetails].[DetailID] = N''1'''
+Completed 500 Internal Server Error in 155.7ms
+
+ActiveRecord::StatementInvalid (TinyTds::Error: Conversion failed when converting the nvarchar value 'EquipmentID >= ?' to data type int.: EXEC sp_executesql N'SELECT [SOOrderDetails].* FROM [SOOrderDetails] WHERE [SOOrderDetails].[SOID] = N''EquipmentID >= ?'' AND [SOOrderDetails].[DetailID] = N''1'''):
+  app/controllers/order_details_controller.rb:7:in `index'
+
+
+  Rendered /Users/Moshe/.rvm/gems/ruby-2.1.2/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+  Rendered /Users/Moshe/.rvm/gems/ruby-2.1.2/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+  Rendered /Users/Moshe/.rvm/gems/ruby-2.1.2/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (12.8ms)
+
+
+Started GET "/api/customers" for 127.0.0.1 at 2015-05-11 13:22:00 -0400
+Processing by CustomersController#index as JSON
+  [1m[35mCustomer Load (355.1ms)[0m  EXEC sp_executesql N'SELECT [ARCustomers].* FROM [ARCustomers]'
+  [1m[36mEXPLAIN (68.3ms)[0m  [1mSELECT [ARCustomers].* FROM [ARCustomers][0m
+EXPLAIN for: SELECT [ARCustomers].* FROM [ARCustomers]
++----------------------------------------------------+--------+--------+--------+----------------------+----------------------+----------------------------------------------------+----------------------------------------------------+--------------+------------+-------------+------------+------------------+----------------------------------------------------+----------+----------+----------+--------------------+
+| StmtText                                           | StmtId | NodeId | Parent | PhysicalOp           | LogicalOp            | Argument                                           | DefinedValues                                      | EstimateRows | EstimateIO | EstimateCPU | AvgRowSize | TotalSubtreeCost | OutputList                                         | Warnings | Type     | Parallel | EstimateExecutions |
++----------------------------------------------------+--------+--------+--------+----------------------+----------------------+----------------------------------------------------+----------------------------------------------------+--------------+------------+-------------+------------+------------------+----------------------------------------------------+----------+----------+----------+--------------------+
+| SELECT [ARCustomers].* FROM [ARCustomers]          | 1      | 1      | 0      | NULL                 | NULL                 | 2                                                  | NULL                                               | 1514.0       | NULL       | NULL        | NULL       | 0.11605851       | NULL                                               | NULL     | SELECT   | false    | NULL               |
+|   |--Clustered Index Scan(OBJECT:([CoWTOS].[dbo... | 1      | 2      | 1      | Clustered Index Scan | Clustered Index Scan | OBJECT:([CoWTOS].[dbo].[ARCustomers].[ARCustome... | [CoWTOS].[dbo].[ARCustomers].[CustomerID], [CoW... | 1514.0       | 0.11423610 | 0.00182240  | 1395       | 0.11605851       | [CoWTOS].[dbo].[ARCustomers].[CustomerID], [CoW... | NULL     | PLAN_ROW | false    | 1.0                |
++----------------------------------------------------+--------+--------+--------+----------------------+----------------------+----------------------------------------------------+----------------------------------------------------+--------------+------------+-------------+------------+------------------+----------------------------------------------------+----------+----------+----------+--------------------+
+
+Completed 200 OK in 1853.8ms (Views: 0.1ms | ActiveRecord: 423.4ms)
+
+
+Started GET "/api/customers/1" for 127.0.0.1 at 2015-05-11 13:22:12 -0400
+Processing by CustomersController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[35mCustomer Load (68.8ms)[0m  EXEC sp_executesql N'SELECT TOP (1) [ARCustomers].* FROM [ARCustomers] WHERE [ARCustomers].[CustomerID] = @0', N'@0 int', @0 = 1  [["CustomerID", "1"]]
+Completed 200 OK in 73.3ms (Views: 0.1ms | ActiveRecord: 68.8ms)
+
+
+Started GET "/api/order_details/1" for 127.0.0.1 at 2015-05-11 13:24:24 -0400
+Processing by OrderDetailsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mOrderDetail Load (53.2ms)[0m  [1mEXEC sp_executesql N'SELECT [SOOrderDetails].* FROM [SOOrderDetails] WHERE [SOOrderDetails].[SOID] = 1 AND [SOOrderDetails].[DetailID] = 1'[0m
+Completed 200 OK in 188.7ms (Views: 27.4ms | ActiveRecord: 53.2ms)
+
+
+Started GET "/api/order_details/5" for 127.0.0.1 at 2015-05-11 13:24:27 -0400
+Processing by OrderDetailsController#show as JSON
+  Parameters: {"id"=>"5"}
+  [1m[35mOrderDetail Load (47.3ms)[0m  EXEC sp_executesql N'SELECT [SOOrderDetails].* FROM [SOOrderDetails] WHERE [SOOrderDetails].[SOID] = 1 AND [SOOrderDetails].[DetailID] = 1'
+Completed 200 OK in 52.9ms (Views: 3.8ms | ActiveRecord: 47.3ms)
+
+
+Started GET "/api/order_details/6" for 127.0.0.1 at 2015-05-11 13:24:30 -0400
+Processing by OrderDetailsController#show as JSON
+  Parameters: {"id"=>"6"}
+  [1m[36mOrderDetail Load (47.5ms)[0m  [1mEXEC sp_executesql N'SELECT [SOOrderDetails].* FROM [SOOrderDetails] WHERE [SOOrderDetails].[SOID] = 1 AND [SOOrderDetails].[DetailID] = 1'[0m
+Completed 200 OK in 53.9ms (Views: 4.2ms | ActiveRecord: 47.5ms)
+Connecting to database specified by database.yml
+  [1m[36mSQL (41.9ms)[0m  [1mUSE [CoWTOS][0m
+
+
+Started GET "/assets/rails.png" for 127.0.0.1 at 2015-05-11 13:32:52 -0400
+  [1m[35mSQL (44.4ms)[0m  USE [CoWTOS]
+
+ActionController::RoutingError (No route matches [GET] "/assets/rails.png"):
+  actionpack (3.2.16) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.16) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.16) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.16) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.16) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.16) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.16) lib/rails/engine.rb:484:in `call'
+  railties (3.2.16) lib/rails/application.rb:231:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.16) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/Moshe/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/Moshe/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/Moshe/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/Moshe/.rvm/gems/ruby-2.1.2/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.3ms)
+
+
+Started GET "/customers" for 127.0.0.1 at 2015-05-11 13:33:00 -0400
+
+ActionController::RoutingError (No route matches [GET] "/customers"):
+  actionpack (3.2.16) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.16) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.16) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.16) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.16) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.16) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.16) lib/rails/engine.rb:484:in `call'
+  railties (3.2.16) lib/rails/application.rb:231:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.16) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/Moshe/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/Moshe/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/Moshe/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/Moshe/.rvm/gems/ruby-2.1.2/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
+
+
+Started GET "/api" for 127.0.0.1 at 2015-05-11 13:33:03 -0400
+
+ActionController::RoutingError (No route matches [GET] "/api"):
+  actionpack (3.2.16) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.16) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.16) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.16) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.16) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.16) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.16) lib/rails/engine.rb:484:in `call'
+  railties (3.2.16) lib/rails/application.rb:231:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.16) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/Moshe/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/Moshe/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/Moshe/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/Moshe/.rvm/gems/ruby-2.1.2/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/api/customers" for 127.0.0.1 at 2015-05-11 13:33:09 -0400
+Processing by CustomersController#index as JSON
+  [1m[36mCustomer Load (409.1ms)[0m  [1mEXEC sp_executesql N'SELECT [ARCustomers].* FROM [ARCustomers]'[0m
+  [1m[35mEXPLAIN (54.1ms)[0m  SELECT [ARCustomers].* FROM [ARCustomers]
+EXPLAIN for: SELECT [ARCustomers].* FROM [ARCustomers]
++----------------------------------------------------+--------+--------+--------+----------------------+----------------------+----------------------------------------------------+----------------------------------------------------+--------------+------------+-------------+------------+------------------+----------------------------------------------------+----------+----------+----------+--------------------+
+| StmtText                                           | StmtId | NodeId | Parent | PhysicalOp           | LogicalOp            | Argument                                           | DefinedValues                                      | EstimateRows | EstimateIO | EstimateCPU | AvgRowSize | TotalSubtreeCost | OutputList                                         | Warnings | Type     | Parallel | EstimateExecutions |
++----------------------------------------------------+--------+--------+--------+----------------------+----------------------+----------------------------------------------------+----------------------------------------------------+--------------+------------+-------------+------------+------------------+----------------------------------------------------+----------+----------+----------+--------------------+
+| SELECT [ARCustomers].* FROM [ARCustomers]          | 1      | 1      | 0      | NULL                 | NULL                 | 2                                                  | NULL                                               | 1514.0       | NULL       | NULL        | NULL       | 0.11605851       | NULL                                               | NULL     | SELECT   | false    | NULL               |
+|   |--Clustered Index Scan(OBJECT:([CoWTOS].[dbo... | 1      | 2      | 1      | Clustered Index Scan | Clustered Index Scan | OBJECT:([CoWTOS].[dbo].[ARCustomers].[ARCustome... | [CoWTOS].[dbo].[ARCustomers].[CustomerID], [CoW... | 1514.0       | 0.11423610 | 0.00182240  | 1395       | 0.11605851       | [CoWTOS].[dbo].[ARCustomers].[CustomerID], [CoW... | NULL     | PLAN_ROW | false    | 1.0                |
++----------------------------------------------------+--------+--------+--------+----------------------+----------------------+----------------------------------------------------+----------------------------------------------------+--------------+------------+-------------+------------+------------------+----------------------------------------------------+----------+----------+----------+--------------------+
+
+Completed 200 OK in 1872.7ms (Views: 0.1ms | ActiveRecord: 463.2ms)
+
+
+Started GET "/api/customers" for 127.0.0.1 at 2015-05-11 13:35:07 -0400
+
+LoadError (Expected /Users/Moshe/rails_apps/wtos_api/app/controllers/api/customers_controller.rb to define API::CustomersController):
+  activesupport (3.2.16) lib/active_support/dependencies.rb:503:in `load_missing_constant'
+  activesupport (3.2.16) lib/active_support/dependencies.rb:192:in `block in const_missing'
+  activesupport (3.2.16) lib/active_support/dependencies.rb:190:in `each'
+  activesupport (3.2.16) lib/active_support/dependencies.rb:190:in `const_missing'
+  activesupport (3.2.16) lib/active_support/inflector/methods.rb:230:in `block in constantize'
+  activesupport (3.2.16) lib/active_support/inflector/methods.rb:229:in `each'
+  activesupport (3.2.16) lib/active_support/inflector/methods.rb:229:in `constantize'
+  activesupport (3.2.16) lib/active_support/dependencies.rb:554:in `get'
+  actionpack (3.2.16) lib/action_dispatch/routing/route_set.rb:69:in `controller_reference'
+  actionpack (3.2.16) lib/action_dispatch/routing/route_set.rb:54:in `controller'
+  actionpack (3.2.16) lib/action_dispatch/routing/route_set.rb:32:in `call'
+  journey (1.0.4) lib/journey/router.rb:68:in `block in call'
+  journey (1.0.4) lib/journey/router.rb:56:in `each'
+  journey (1.0.4) lib/journey/router.rb:56:in `call'
+  actionpack (3.2.16) lib/action_dispatch/routing/route_set.rb:608:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.5) lib/rack/etag.rb:23:in `call'
+  rack (1.4.5) lib/rack/conditionalget.rb:25:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:210:in `context'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:205:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/cookies.rb:341:in `call'
+  activerecord (3.2.16) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.16) lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.16) lib/active_support/callbacks.rb:405:in `_run__2581687772884228770__call__4507957774805349764__callbacks'
+  activesupport (3.2.16) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.16) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.16) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.16) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.16) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.16) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.16) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.16) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.16) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.16) lib/rails/engine.rb:484:in `call'
+  railties (3.2.16) lib/rails/application.rb:231:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.16) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/Moshe/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/Moshe/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/Moshe/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/Moshe/.rvm/gems/ruby-2.1.2/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.5ms)
+  Rendered /Users/Moshe/.rvm/gems/ruby-2.1.2/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.5ms)
+  Rendered /Users/Moshe/.rvm/gems/ruby-2.1.2/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (11.8ms)
+
+
+Started GET "/api/customers" for 127.0.0.1 at 2015-05-11 13:35:29 -0400
+Processing by API::CustomersController#index as JSON
+  [1m[36mCustomer Load (370.6ms)[0m  [1mEXEC sp_executesql N'SELECT [ARCustomers].* FROM [ARCustomers]'[0m
+  [1m[35mEXPLAIN (53.7ms)[0m  SELECT [ARCustomers].* FROM [ARCustomers]
+EXPLAIN for: SELECT [ARCustomers].* FROM [ARCustomers]
++----------------------------------------------------+--------+--------+--------+----------------------+----------------------+----------------------------------------------------+----------------------------------------------------+--------------+------------+-------------+------------+------------------+----------------------------------------------------+----------+----------+----------+--------------------+
+| StmtText                                           | StmtId | NodeId | Parent | PhysicalOp           | LogicalOp            | Argument                                           | DefinedValues                                      | EstimateRows | EstimateIO | EstimateCPU | AvgRowSize | TotalSubtreeCost | OutputList                                         | Warnings | Type     | Parallel | EstimateExecutions |
++----------------------------------------------------+--------+--------+--------+----------------------+----------------------+----------------------------------------------------+----------------------------------------------------+--------------+------------+-------------+------------+------------------+----------------------------------------------------+----------+----------+----------+--------------------+
+| SELECT [ARCustomers].* FROM [ARCustomers]          | 1      | 1      | 0      | NULL                 | NULL                 | 2                                                  | NULL                                               | 1514.0       | NULL       | NULL        | NULL       | 0.11605851       | NULL                                               | NULL     | SELECT   | false    | NULL               |
+|   |--Clustered Index Scan(OBJECT:([CoWTOS].[dbo... | 1      | 2      | 1      | Clustered Index Scan | Clustered Index Scan | OBJECT:([CoWTOS].[dbo].[ARCustomers].[ARCustome... | [CoWTOS].[dbo].[ARCustomers].[CustomerID], [CoW... | 1514.0       | 0.11423610 | 0.00182240  | 1395       | 0.11605851       | [CoWTOS].[dbo].[ARCustomers].[CustomerID], [CoW... | NULL     | PLAN_ROW | false    | 1.0                |
++----------------------------------------------------+--------+--------+--------+----------------------+----------------------+----------------------------------------------------+----------------------------------------------------+--------------+------------+-------------+------------+------------------+----------------------------------------------------+----------+----------+----------+--------------------+
+
+Completed 200 OK in 1890.8ms (Views: 0.3ms | ActiveRecord: 424.4ms)
+
+
+Started GET "/api/contacts" for 127.0.0.1 at 2015-05-11 13:42:22 -0400
+
+ActionController::RoutingError (No route matches [GET] "/api/contacts"):
+  actionpack (3.2.16) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.16) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.16) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.16) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.16) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.16) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.16) lib/rails/engine.rb:484:in `call'
+  railties (3.2.16) lib/rails/application.rb:231:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.16) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/Moshe/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/Moshe/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/Moshe/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/Moshe/.rvm/gems/ruby-2.1.2/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (3.7ms)
+
+
+Started GET "/api/leases" for 127.0.0.1 at 2015-05-11 13:42:46 -0400
+
+LoadError (Expected /Users/Moshe/rails_apps/wtos_api/app/controllers/api/leases_controller.rb to define API::LeasesController):
+  activesupport (3.2.16) lib/active_support/dependencies.rb:503:in `load_missing_constant'
+  activesupport (3.2.16) lib/active_support/dependencies.rb:192:in `block in const_missing'
+  activesupport (3.2.16) lib/active_support/dependencies.rb:190:in `each'
+  activesupport (3.2.16) lib/active_support/dependencies.rb:190:in `const_missing'
+  activesupport (3.2.16) lib/active_support/inflector/methods.rb:230:in `block in constantize'
+  activesupport (3.2.16) lib/active_support/inflector/methods.rb:229:in `each'
+  activesupport (3.2.16) lib/active_support/inflector/methods.rb:229:in `constantize'
+  activesupport (3.2.16) lib/active_support/dependencies.rb:554:in `get'
+  actionpack (3.2.16) lib/action_dispatch/routing/route_set.rb:69:in `controller_reference'
+  actionpack (3.2.16) lib/action_dispatch/routing/route_set.rb:54:in `controller'
+  actionpack (3.2.16) lib/action_dispatch/routing/route_set.rb:32:in `call'
+  journey (1.0.4) lib/journey/router.rb:68:in `block in call'
+  journey (1.0.4) lib/journey/router.rb:56:in `each'
+  journey (1.0.4) lib/journey/router.rb:56:in `call'
+  actionpack (3.2.16) lib/action_dispatch/routing/route_set.rb:608:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.5) lib/rack/etag.rb:23:in `call'
+  rack (1.4.5) lib/rack/conditionalget.rb:25:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:210:in `context'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:205:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/cookies.rb:341:in `call'
+  activerecord (3.2.16) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.16) lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.16) lib/active_support/callbacks.rb:405:in `_run__2581687772884228770__call__4507957774805349764__callbacks'
+  activesupport (3.2.16) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.16) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.16) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.16) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.16) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.16) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.16) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.16) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.16) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.16) lib/rails/engine.rb:484:in `call'
+  railties (3.2.16) lib/rails/application.rb:231:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.16) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/Moshe/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/Moshe/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/Moshe/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/Moshe/.rvm/gems/ruby-2.1.2/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.1ms)
+  Rendered /Users/Moshe/.rvm/gems/ruby-2.1.2/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.9ms)
+  Rendered /Users/Moshe/.rvm/gems/ruby-2.1.2/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (10.4ms)
+
+
+Started GET "/api/leases" for 127.0.0.1 at 2015-05-11 13:43:03 -0400
+
+ActionController::RoutingError (uninitialized constant ApplicationController):
+  app/controllers/api/leases_controller.rb:1:in `<top (required)>'
+
+
+  Rendered /Users/Moshe/.rvm/gems/ruby-2.1.2/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.4ms)
+
+
+Started GET "/api/leases" for 127.0.0.1 at 2015-05-11 13:43:36 -0400
+
+ActionController::RoutingError (uninitialized constant ApplicationController):
+  app/controllers/api/leases_controller.rb:1:in `<top (required)>'
+
+
+  Rendered /Users/Moshe/.rvm/gems/ruby-2.1.2/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/api/leases" for 127.0.0.1 at 2015-05-11 13:43:42 -0400
+
+ActionController::RoutingError (uninitialized constant ApplicationController):
+  app/controllers/api/leases_controller.rb:1:in `<top (required)>'
+
+
+  Rendered /Users/Moshe/.rvm/gems/ruby-2.1.2/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)
+
+
+Started GET "/api/leases" for 127.0.0.1 at 2015-05-11 13:43:48 -0400
+
+ActionController::RoutingError (uninitialized constant ApplicationController):
+  app/controllers/api/leases_controller.rb:1:in `<top (required)>'
+
+
+  Rendered /Users/Moshe/.rvm/gems/ruby-2.1.2/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
+
+
+Started GET "/api/leases/1" for 127.0.0.1 at 2015-05-11 13:43:51 -0400
+
+ActionController::RoutingError (uninitialized constant ApplicationController):
+  app/controllers/api/leases_controller.rb:1:in `<top (required)>'
+
+
+  Rendered /Users/Moshe/.rvm/gems/ruby-2.1.2/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/api/customers/1" for 127.0.0.1 at 2015-05-11 13:43:54 -0400
+
+ActionController::RoutingError (uninitialized constant ApplicationController):
+  app/controllers/api/customers_controller.rb:1:in `<top (required)>'
+
+
+  Rendered /Users/Moshe/.rvm/gems/ruby-2.1.2/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/api/customers" for 127.0.0.1 at 2015-05-11 13:44:31 -0400
+
+ActionController::RoutingError (uninitialized constant ApplicationController):
+  app/controllers/api/customers_controller.rb:1:in `<top (required)>'
+
+
+  Rendered /Users/Moshe/.rvm/gems/ruby-2.1.2/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.2ms)
+
+
+Started GET "/api/customers" for 127.0.0.1 at 2015-05-11 13:44:33 -0400
+
+ActionController::RoutingError (uninitialized constant ApplicationController):
+  app/controllers/api/customers_controller.rb:1:in `<top (required)>'
+
+
+  Rendered /Users/Moshe/.rvm/gems/ruby-2.1.2/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.2ms)
+
+
+Started GET "/api/customers" for 127.0.0.1 at 2015-05-11 13:44:35 -0400
+
+ActionController::RoutingError (uninitialized constant ApplicationController):
+  app/controllers/api/customers_controller.rb:1:in `<top (required)>'
+
+
+  Rendered /Users/Moshe/.rvm/gems/ruby-2.1.2/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)
+
+
+Started GET "/api/customers" for 127.0.0.1 at 2015-05-11 13:48:07 -0400
+
+ActionController::RoutingError (uninitialized constant ApplicationController):
+  app/controllers/api/customers_controller.rb:1:in `<top (required)>'
+
+
+  Rendered /Users/Moshe/.rvm/gems/ruby-2.1.2/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.2ms)
+
+
+Started GET "/api/customers" for 127.0.0.1 at 2015-05-11 13:48:47 -0400
+
+SyntaxError (/Users/Moshe/rails_apps/wtos_api/app/controllers/api/customers_controller.rb:1: class/module name must be CONSTANT):
+  activesupport (3.2.16) lib/active_support/dependencies.rb:469:in `load'
+  activesupport (3.2.16) lib/active_support/dependencies.rb:469:in `block in load_file'
+  activesupport (3.2.16) lib/active_support/dependencies.rb:639:in `new_constants_in'
+  activesupport (3.2.16) lib/active_support/dependencies.rb:468:in `load_file'
+  activesupport (3.2.16) lib/active_support/dependencies.rb:353:in `require_or_load'
+  activesupport (3.2.16) lib/active_support/dependencies.rb:502:in `load_missing_constant'
+  activesupport (3.2.16) lib/active_support/dependencies.rb:192:in `block in const_missing'
+  activesupport (3.2.16) lib/active_support/dependencies.rb:190:in `each'
+  activesupport (3.2.16) lib/active_support/dependencies.rb:190:in `const_missing'
+  activesupport (3.2.16) lib/active_support/inflector/methods.rb:230:in `block in constantize'
+  activesupport (3.2.16) lib/active_support/inflector/methods.rb:229:in `each'
+  activesupport (3.2.16) lib/active_support/inflector/methods.rb:229:in `constantize'
+  activesupport (3.2.16) lib/active_support/dependencies.rb:554:in `get'
+  actionpack (3.2.16) lib/action_dispatch/routing/route_set.rb:69:in `controller_reference'
+  actionpack (3.2.16) lib/action_dispatch/routing/route_set.rb:54:in `controller'
+  actionpack (3.2.16) lib/action_dispatch/routing/route_set.rb:32:in `call'
+  journey (1.0.4) lib/journey/router.rb:68:in `block in call'
+  journey (1.0.4) lib/journey/router.rb:56:in `each'
+  journey (1.0.4) lib/journey/router.rb:56:in `call'
+  actionpack (3.2.16) lib/action_dispatch/routing/route_set.rb:608:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.5) lib/rack/etag.rb:23:in `call'
+  rack (1.4.5) lib/rack/conditionalget.rb:25:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:210:in `context'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:205:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/cookies.rb:341:in `call'
+  activerecord (3.2.16) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.16) lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.16) lib/active_support/callbacks.rb:405:in `_run__2581687772884228770__call__4507957774805349764__callbacks'
+  activesupport (3.2.16) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.16) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.16) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.16) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.16) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.16) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.16) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.16) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.16) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.16) lib/rails/engine.rb:484:in `call'
+  railties (3.2.16) lib/rails/application.rb:231:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.16) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/Moshe/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/Moshe/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/Moshe/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/Moshe/.rvm/gems/ruby-2.1.2/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.5ms)
+  Rendered /Users/Moshe/.rvm/gems/ruby-2.1.2/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.2ms)
+  Rendered /Users/Moshe/.rvm/gems/ruby-2.1.2/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (15.2ms)
+
+
+Started GET "/api/customers" for 127.0.0.1 at 2015-05-11 13:49:09 -0400
+
+LoadError (Expected /Users/Moshe/rails_apps/wtos_api/app/controllers/api/application_controller.rb to define API::ApplicationController):
+  app/controllers/api/customers_controller.rb:2:in `<module:API>'
+  app/controllers/api/customers_controller.rb:1:in `<top (required)>'
+
+
+  Rendered /Users/Moshe/.rvm/gems/ruby-2.1.2/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.1ms)
+  Rendered /Users/Moshe/.rvm/gems/ruby-2.1.2/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.1ms)
+  Rendered /Users/Moshe/.rvm/gems/ruby-2.1.2/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (13.7ms)
+
+
+Started GET "/api/customers" for 127.0.0.1 at 2015-05-11 13:49:31 -0400
+
+TypeError (API is not a class):
+  app/controllers/api/customers_controller.rb:1:in `<top (required)>'
+
+
+  Rendered /Users/Moshe/.rvm/gems/ruby-2.1.2/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.1ms)
+  Rendered /Users/Moshe/.rvm/gems/ruby-2.1.2/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.5ms)
+  Rendered /Users/Moshe/.rvm/gems/ruby-2.1.2/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (10.1ms)
+
+
+Started GET "/api/customers" for 127.0.0.1 at 2015-05-11 13:49:39 -0400
+
+SyntaxError (/Users/Moshe/rails_apps/wtos_api/app/controllers/api/customers_controller.rb:1: class/module name must be CONSTANT):
+  activesupport (3.2.16) lib/active_support/dependencies.rb:469:in `load'
+  activesupport (3.2.16) lib/active_support/dependencies.rb:469:in `block in load_file'
+  activesupport (3.2.16) lib/active_support/dependencies.rb:639:in `new_constants_in'
+  activesupport (3.2.16) lib/active_support/dependencies.rb:468:in `load_file'
+  activesupport (3.2.16) lib/active_support/dependencies.rb:353:in `require_or_load'
+  activesupport (3.2.16) lib/active_support/dependencies.rb:502:in `load_missing_constant'
+  activesupport (3.2.16) lib/active_support/dependencies.rb:192:in `block in const_missing'
+  activesupport (3.2.16) lib/active_support/dependencies.rb:190:in `each'
+  activesupport (3.2.16) lib/active_support/dependencies.rb:190:in `const_missing'
+  activesupport (3.2.16) lib/active_support/inflector/methods.rb:230:in `block in constantize'
+  activesupport (3.2.16) lib/active_support/inflector/methods.rb:229:in `each'
+  activesupport (3.2.16) lib/active_support/inflector/methods.rb:229:in `constantize'
+  activesupport (3.2.16) lib/active_support/dependencies.rb:554:in `get'
+  actionpack (3.2.16) lib/action_dispatch/routing/route_set.rb:69:in `controller_reference'
+  actionpack (3.2.16) lib/action_dispatch/routing/route_set.rb:54:in `controller'
+  actionpack (3.2.16) lib/action_dispatch/routing/route_set.rb:32:in `call'
+  journey (1.0.4) lib/journey/router.rb:68:in `block in call'
+  journey (1.0.4) lib/journey/router.rb:56:in `each'
+  journey (1.0.4) lib/journey/router.rb:56:in `call'
+  actionpack (3.2.16) lib/action_dispatch/routing/route_set.rb:608:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.5) lib/rack/etag.rb:23:in `call'
+  rack (1.4.5) lib/rack/conditionalget.rb:25:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:210:in `context'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:205:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/cookies.rb:341:in `call'
+  activerecord (3.2.16) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.16) lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.16) lib/active_support/callbacks.rb:405:in `_run__2581687772884228770__call__4507957774805349764__callbacks'
+  activesupport (3.2.16) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.16) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.16) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.16) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.16) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.16) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.16) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.16) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.16) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.16) lib/rails/engine.rb:484:in `call'
+  railties (3.2.16) lib/rails/application.rb:231:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.16) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/Moshe/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/Moshe/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/Moshe/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/Moshe/.rvm/gems/ruby-2.1.2/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.9ms)
+  Rendered /Users/Moshe/.rvm/gems/ruby-2.1.2/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.5ms)
+  Rendered /Users/Moshe/.rvm/gems/ruby-2.1.2/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (9.2ms)
+
+
+Started GET "/api/customers" for 127.0.0.1 at 2015-05-11 13:50:14 -0400
+
+LoadError (Expected /Users/Moshe/rails_apps/wtos_api/app/controllers/api/customers_controller.rb to define API::CustomersController):
+  activesupport (3.2.16) lib/active_support/dependencies.rb:503:in `load_missing_constant'
+  activesupport (3.2.16) lib/active_support/dependencies.rb:192:in `block in const_missing'
+  activesupport (3.2.16) lib/active_support/dependencies.rb:190:in `each'
+  activesupport (3.2.16) lib/active_support/dependencies.rb:190:in `const_missing'
+  activesupport (3.2.16) lib/active_support/inflector/methods.rb:230:in `block in constantize'
+  activesupport (3.2.16) lib/active_support/inflector/methods.rb:229:in `each'
+  activesupport (3.2.16) lib/active_support/inflector/methods.rb:229:in `constantize'
+  activesupport (3.2.16) lib/active_support/dependencies.rb:554:in `get'
+  actionpack (3.2.16) lib/action_dispatch/routing/route_set.rb:69:in `controller_reference'
+  actionpack (3.2.16) lib/action_dispatch/routing/route_set.rb:54:in `controller'
+  actionpack (3.2.16) lib/action_dispatch/routing/route_set.rb:32:in `call'
+  journey (1.0.4) lib/journey/router.rb:68:in `block in call'
+  journey (1.0.4) lib/journey/router.rb:56:in `each'
+  journey (1.0.4) lib/journey/router.rb:56:in `call'
+  actionpack (3.2.16) lib/action_dispatch/routing/route_set.rb:608:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.5) lib/rack/etag.rb:23:in `call'
+  rack (1.4.5) lib/rack/conditionalget.rb:25:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:210:in `context'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:205:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/cookies.rb:341:in `call'
+  activerecord (3.2.16) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.16) lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.16) lib/active_support/callbacks.rb:405:in `_run__2581687772884228770__call__4507957774805349764__callbacks'
+  activesupport (3.2.16) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.16) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.16) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.16) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.16) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.16) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.16) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.16) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.16) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.16) lib/rails/engine.rb:484:in `call'
+  railties (3.2.16) lib/rails/application.rb:231:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.16) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/Moshe/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/Moshe/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/Moshe/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/Moshe/.rvm/gems/ruby-2.1.2/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.0ms)
+  Rendered /Users/Moshe/.rvm/gems/ruby-2.1.2/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.5ms)
+  Rendered /Users/Moshe/.rvm/gems/ruby-2.1.2/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (13.7ms)
+
+
+Started GET "/api/customers" for 127.0.0.1 at 2015-05-11 13:50:16 -0400
+
+ActionController::RoutingError (uninitialized constant API::CustomersController):
+  activesupport (3.2.16) lib/active_support/inflector/methods.rb:230:in `block in constantize'
+  activesupport (3.2.16) lib/active_support/inflector/methods.rb:229:in `each'
+  activesupport (3.2.16) lib/active_support/inflector/methods.rb:229:in `constantize'
+  actionpack (3.2.16) lib/action_dispatch/routing/route_set.rb:69:in `controller_reference'
+  actionpack (3.2.16) lib/action_dispatch/routing/route_set.rb:54:in `controller'
+  actionpack (3.2.16) lib/action_dispatch/routing/route_set.rb:32:in `call'
+  journey (1.0.4) lib/journey/router.rb:68:in `block in call'
+  journey (1.0.4) lib/journey/router.rb:56:in `each'
+  journey (1.0.4) lib/journey/router.rb:56:in `call'
+  actionpack (3.2.16) lib/action_dispatch/routing/route_set.rb:608:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.5) lib/rack/etag.rb:23:in `call'
+  rack (1.4.5) lib/rack/conditionalget.rb:25:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:210:in `context'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:205:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/cookies.rb:341:in `call'
+  activerecord (3.2.16) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.16) lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.16) lib/active_support/callbacks.rb:405:in `_run__2581687772884228770__call__4507957774805349764__callbacks'
+  activesupport (3.2.16) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.16) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.16) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.16) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.16) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.16) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.16) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.16) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.16) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.16) lib/rails/engine.rb:484:in `call'
+  railties (3.2.16) lib/rails/application.rb:231:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.16) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/Moshe/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/Moshe/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/Moshe/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/Moshe/.rvm/gems/ruby-2.1.2/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/api/customers" for 127.0.0.1 at 2015-05-11 13:50:31 -0400
+
+LoadError (Expected /Users/Moshe/rails_apps/wtos_api/app/controllers/api/customers_controller.rb to define API::CustomersController):
+  activesupport (3.2.16) lib/active_support/dependencies.rb:503:in `load_missing_constant'
+  activesupport (3.2.16) lib/active_support/dependencies.rb:192:in `block in const_missing'
+  activesupport (3.2.16) lib/active_support/dependencies.rb:190:in `each'
+  activesupport (3.2.16) lib/active_support/dependencies.rb:190:in `const_missing'
+  activesupport (3.2.16) lib/active_support/inflector/methods.rb:230:in `block in constantize'
+  activesupport (3.2.16) lib/active_support/inflector/methods.rb:229:in `each'
+  activesupport (3.2.16) lib/active_support/inflector/methods.rb:229:in `constantize'
+  activesupport (3.2.16) lib/active_support/dependencies.rb:554:in `get'
+  actionpack (3.2.16) lib/action_dispatch/routing/route_set.rb:69:in `controller_reference'
+  actionpack (3.2.16) lib/action_dispatch/routing/route_set.rb:54:in `controller'
+  actionpack (3.2.16) lib/action_dispatch/routing/route_set.rb:32:in `call'
+  journey (1.0.4) lib/journey/router.rb:68:in `block in call'
+  journey (1.0.4) lib/journey/router.rb:56:in `each'
+  journey (1.0.4) lib/journey/router.rb:56:in `call'
+  actionpack (3.2.16) lib/action_dispatch/routing/route_set.rb:608:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.5) lib/rack/etag.rb:23:in `call'
+  rack (1.4.5) lib/rack/conditionalget.rb:25:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:210:in `context'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:205:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/cookies.rb:341:in `call'
+  activerecord (3.2.16) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.16) lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.16) lib/active_support/callbacks.rb:405:in `_run__2581687772884228770__call__4507957774805349764__callbacks'
+  activesupport (3.2.16) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.16) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.16) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.16) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.16) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.16) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.16) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.16) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.16) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.16) lib/rails/engine.rb:484:in `call'
+  railties (3.2.16) lib/rails/application.rb:231:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.16) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/Moshe/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/Moshe/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/Moshe/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/Moshe/.rvm/gems/ruby-2.1.2/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.4ms)
+  Rendered /Users/Moshe/.rvm/gems/ruby-2.1.2/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (17.3ms)
+  Rendered /Users/Moshe/.rvm/gems/ruby-2.1.2/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (32.9ms)
+Connecting to database specified by database.yml
+  [1m[36mSQL (43.0ms)[0m  [1mUSE [CoWTOS][0m
+
+
+Started GET "/api/customers" for 127.0.0.1 at 2015-05-11 13:53:10 -0400
+  [1m[35mSQL (42.7ms)[0m  USE [CoWTOS]
+
+ActionController::RoutingError (uninitialized constant ApplicationController):
+  app/controllers/api/customers_controller.rb:1:in `<top (required)>'
+
+
+  Rendered /Users/Moshe/.rvm/gems/ruby-2.1.2/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.8ms)
+
+
+Started GET "/api/customers" for 127.0.0.1 at 2015-05-11 13:53:39 -0400
+
+ActionController::RoutingError (uninitialized constant ApplicationController):
+  app/controllers/api/customers_controller.rb:1:in `<top (required)>'
+
+
+  Rendered /Users/Moshe/.rvm/gems/ruby-2.1.2/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/api/customers" for 127.0.0.1 at 2015-05-11 13:53:42 -0400
+
+ActionController::RoutingError (uninitialized constant ApplicationController):
+  app/controllers/api/customers_controller.rb:1:in `<top (required)>'
+
+
+  Rendered /Users/Moshe/.rvm/gems/ruby-2.1.2/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/api/leases" for 127.0.0.1 at 2015-05-11 13:53:46 -0400
+
+ActionController::RoutingError (uninitialized constant ApplicationController):
+  app/controllers/api/leases_controller.rb:1:in `<top (required)>'
+
+
+  Rendered /Users/Moshe/.rvm/gems/ruby-2.1.2/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
+
+
+Started GET "/api/leases" for 127.0.0.1 at 2015-05-11 13:55:34 -0400
+
+ActionController::RoutingError (uninitialized constant ApplicationController):
+  app/controllers/api/leases_controller.rb:1:in `<top (required)>'
+
+
+  Rendered /Users/Moshe/.rvm/gems/ruby-2.1.2/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.7ms)
+
+
+Started GET "/api/custoemrs/1" for 127.0.0.1 at 2015-05-11 13:55:41 -0400
+
+ActionController::RoutingError (No route matches [GET] "/api/custoemrs/1"):
+  actionpack (3.2.16) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.16) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.16) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.16) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.16) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.16) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.16) lib/rails/engine.rb:484:in `call'
+  railties (3.2.16) lib/rails/application.rb:231:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.16) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/Moshe/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/Moshe/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/Moshe/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/Moshe/.rvm/gems/ruby-2.1.2/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/api/customers" for 127.0.0.1 at 2015-05-11 13:55:48 -0400
+
+ActionController::RoutingError (uninitialized constant ApplicationController):
+  app/controllers/api/customers_controller.rb:1:in `<top (required)>'
+
+
+  Rendered /Users/Moshe/.rvm/gems/ruby-2.1.2/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.4ms)
+
+
+Started GET "/api/customers" for 127.0.0.1 at 2015-05-11 13:56:03 -0400
+
+ActionController::RoutingError (uninitialized constant ApplicationController):
+  app/controllers/api/customers_controller.rb:1:in `<top (required)>'
+
+
+  Rendered /Users/Moshe/.rvm/gems/ruby-2.1.2/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.3ms)
+
+
+Started GET "/api/customers" for 127.0.0.1 at 2015-05-11 13:56:09 -0400
+
+LoadError (Expected /Users/Moshe/rails_apps/wtos_api/app/controllers/api/customers_controller.rb to define API::CustomersController):
+  activesupport (3.2.16) lib/active_support/dependencies.rb:503:in `load_missing_constant'
+  activesupport (3.2.16) lib/active_support/dependencies.rb:192:in `block in const_missing'
+  activesupport (3.2.16) lib/active_support/dependencies.rb:190:in `each'
+  activesupport (3.2.16) lib/active_support/dependencies.rb:190:in `const_missing'
+  activesupport (3.2.16) lib/active_support/inflector/methods.rb:230:in `block in constantize'
+  activesupport (3.2.16) lib/active_support/inflector/methods.rb:229:in `each'
+  activesupport (3.2.16) lib/active_support/inflector/methods.rb:229:in `constantize'
+  activesupport (3.2.16) lib/active_support/dependencies.rb:554:in `get'
+  actionpack (3.2.16) lib/action_dispatch/routing/route_set.rb:69:in `controller_reference'
+  actionpack (3.2.16) lib/action_dispatch/routing/route_set.rb:54:in `controller'
+  actionpack (3.2.16) lib/action_dispatch/routing/route_set.rb:32:in `call'
+  journey (1.0.4) lib/journey/router.rb:68:in `block in call'
+  journey (1.0.4) lib/journey/router.rb:56:in `each'
+  journey (1.0.4) lib/journey/router.rb:56:in `call'
+  actionpack (3.2.16) lib/action_dispatch/routing/route_set.rb:608:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.5) lib/rack/etag.rb:23:in `call'
+  rack (1.4.5) lib/rack/conditionalget.rb:25:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:210:in `context'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:205:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/cookies.rb:341:in `call'
+  activerecord (3.2.16) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.16) lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.16) lib/active_support/callbacks.rb:405:in `_run__3493495394215216737__call__2593757599405608471__callbacks'
+  activesupport (3.2.16) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.16) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.16) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.16) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.16) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.16) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.16) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.16) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.16) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.16) lib/rails/engine.rb:484:in `call'
+  railties (3.2.16) lib/rails/application.rb:231:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.16) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/Moshe/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/Moshe/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/Moshe/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/Moshe/.rvm/gems/ruby-2.1.2/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.6ms)
+  Rendered /Users/Moshe/.rvm/gems/ruby-2.1.2/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (13.7ms)
+  Rendered /Users/Moshe/.rvm/gems/ruby-2.1.2/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (21.3ms)
+
+
+Started GET "/api/customers" for 127.0.0.1 at 2015-05-11 13:56:39 -0400
+
+TypeError (superclass mismatch for class CustomersController):
+  app/controllers/api/customers_controller.rb:1:in `<top (required)>'
+
+
+  Rendered /Users/Moshe/.rvm/gems/ruby-2.1.2/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+  Rendered /Users/Moshe/.rvm/gems/ruby-2.1.2/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+  Rendered /Users/Moshe/.rvm/gems/ruby-2.1.2/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (8.9ms)
+
+
+Started GET "/api/customers" for 127.0.0.1 at 2015-05-11 13:59:36 -0400
+
+ActionController::RoutingError (uninitialized constant ApplicationController):
+  app/controllers/api/customers_controller.rb:1:in `<top (required)>'
+
+
+  Rendered /Users/Moshe/.rvm/gems/ruby-2.1.2/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (4.2ms)
+
+
+Started GET "/api/customer" for 127.0.0.1 at 2015-05-11 13:59:43 -0400
+
+ActionController::RoutingError (No route matches [GET] "/api/customer"):
+  actionpack (3.2.16) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.16) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.16) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.16) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.16) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.16) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.16) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.16) lib/rails/engine.rb:484:in `call'
+  railties (3.2.16) lib/rails/application.rb:231:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.16) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/Moshe/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/Moshe/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/Moshe/.rvm/rubies/ruby-2.1.2/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/Moshe/.rvm/gems/ruby-2.1.2/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
+
+
+Started GET "/api/customers" for 127.0.0.1 at 2015-05-11 13:59:46 -0400
+
+ActionController::RoutingError (uninitialized constant ApplicationController):
+  app/controllers/api/customers_controller.rb:1:in `<top (required)>'
+
+
+  Rendered /Users/Moshe/.rvm/gems/ruby-2.1.2/gems/actionpack-3.2.16/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+Connecting to database specified by database.yml

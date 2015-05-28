@@ -13,7 +13,7 @@ class API::CustomersController < ApplicationController
       format.json { render json: @customers.to_json(:only => [], :methods => [:dg_customer_id, :dg_customer_number, :dg_sales_rep_id, :customer_name, :customer_address, :customer_city, :customer_state, :customer_zip, :customer_phone, :customer_fax, :customer_active, :customer_prospect, :dg_last_update]) }
     end
   end
-  
+
   def show
     @customer = Customer.find(params[:id])
 
