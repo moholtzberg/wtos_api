@@ -14,7 +14,7 @@ class API::OrderDetailsController < ApplicationController
     puts "==============#{params[:equipment_id].inspect}"
     puts "--------------#{@order_detail.inspect}"
     respond_to do |format|
-      format.json { render json: @order_datail }
+      format.json { render json: @order_datail.to_json }
     end
   end
 
