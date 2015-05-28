@@ -1,4 +1,4 @@
-class API::CustomersController < ApplicationController::Base
+class API::CustomersController < ApplicationController
   
   def index
     if params[:last_update]

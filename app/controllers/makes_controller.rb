@@ -1,4 +1,4 @@
-class MakesController < ApplicationController
+class API::MakesController < ApplicationController
   
   def index
     time = DateTime.parse(params[:last_update]) || DateTime.new
