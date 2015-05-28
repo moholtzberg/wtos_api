@@ -5,7 +5,7 @@ class API::OrderDetailsController < ApplicationController
     # equipment = Equipment.find(params[:equipment_id])
     # @order_datails = equipment.order_details
     if params[:equipment_id]
-      equipment_id = params[:equipment_id].to_i
+      equipment_id = params[:equipment_id]
       @order_detail = OrderDetail.where(["EquipmentID = ?", equipment_id])
     elsif params[:order_id]
       order_id = params[:order_id].to_i
