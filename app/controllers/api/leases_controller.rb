@@ -1,4 +1,4 @@
-class API::LeasesController < ApplicationController
+class API::LeasesController < ApplicationController::Base
   # GET /orders
   # GET /orders.json
   def index
