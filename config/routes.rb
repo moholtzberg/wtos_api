@@ -19,9 +19,7 @@ WtosApi::Application.routes.draw do
       resources :order_details
     end
     resources :customers do
-      resources :equipments do
-        match "order_details#index"
-      end
+      resources :equipments
     end
     resources :leases
     resources :models
