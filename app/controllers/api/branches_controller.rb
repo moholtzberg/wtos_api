@@ -1,4 +1,4 @@
-class BranchesController < ApplicationController
+class API::BranchesController < ApplicationController
   # GET /branches
   # GET /branches.json
   def index

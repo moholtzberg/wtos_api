@@ -1,4 +1,4 @@
-class CoRegValuesController < ApplicationController
+class API::CoRegValuesController < ApplicationController
   # GET /co_reg_values
   # GET /co_reg_values.json
   def index

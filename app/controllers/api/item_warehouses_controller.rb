@@ -1,4 +1,4 @@
-class ItemWarehousesController < ApplicationController
+class API::ItemWarehousesController < ApplicationController
   # GET /item_warehouses
   # GET /item_warehouses.json
   def index

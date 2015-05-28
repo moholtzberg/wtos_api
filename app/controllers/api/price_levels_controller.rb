@@ -1,4 +1,4 @@
-class PriceLevelsController < ApplicationController
+class API::PriceLevelsController < ApplicationController
   # GET /price_levels
   # GET /price_levels.json
   def index

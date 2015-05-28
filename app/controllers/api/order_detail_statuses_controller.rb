@@ -1,4 +1,4 @@
-class OrderDetailStatusesController < ApplicationController
+class API::OrderDetailStatusesController < ApplicationController
   # GET /order_detail_statuses
   # GET /order_detail_statuses.json
   def index

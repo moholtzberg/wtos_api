@@ -15,7 +15,9 @@ WtosApi::Application.routes.draw do
     resources :items
     resources :order_datails
     resources :branches
-    resources :orders
+    resources :orders do
+      resources :order_details
+    end
     resources :customers do
       resources :equipments, shallow: true do
         resources :order_details

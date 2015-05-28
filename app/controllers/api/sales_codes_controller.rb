@@ -1,4 +1,4 @@
-class SalesCodesController < ApplicationController
+class API::SalesCodesController < ApplicationController
   # GET /sales_codes
   # GET /sales_codes.json
   def index

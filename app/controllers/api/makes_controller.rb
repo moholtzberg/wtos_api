@@ -1,13 +1,7 @@
 class API::MakesController < ApplicationController
   
   def index
-    if params[:last_update]
-      time = DateTime.parse(params[:last_update]) || DateTime.new
-      puts = "---->>>> #{time}"
-      @makes = Make.where(["LastUpdate >= ?", time])
-    else
-      @makes = Make.all
-    end
+    @makes = Make.all
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @makes.to_json(

@@ -1,10 +1,14 @@
-class API::LeasesController < ApplicationController::Base
+class API::LeasesController < ApplicationController
   # GET /orders
   # GET /orders.json
   def index
-    time = DateTime.parse(params[:last_update]) || DateTime.new
-    puts = "---->>>> #{time}"
-    @leases = Lease.where(["LastUpdate >= ?", time])
+    if params[:last_update]
+      time = DateTime.parse(params[:last_update]) || DateTime.new
+      puts = "---->>>> #{time}"
+      @leases = Lease.where(["LastUpdate >= ?", time])
+    else
+      @leases = Lease.all
+    end
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @leases.to_json(

@@ -1,4 +1,4 @@
-class ItemPricesController < ApplicationController
+class API::ItemPricesController < ApplicationController
   # GET /item_prices
   # GET /item_prices.json
   def index

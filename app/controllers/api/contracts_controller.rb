@@ -1,4 +1,4 @@
-class ContractsController < ApplicationController
+class API::ContractsController < ApplicationController
   # GET /contracts
   # GET /contracts.json
   def index

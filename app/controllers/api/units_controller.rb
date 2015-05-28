@@ -1,4 +1,4 @@
-class UnitsController < ApplicationController
+class API::UnitsController < ApplicationController
   # GET /units
   # GET /units.json
   def index

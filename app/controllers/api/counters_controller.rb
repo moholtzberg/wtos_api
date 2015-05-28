@@ -1,4 +1,4 @@
-class CountersController < ApplicationController
+class API::CountersController < ApplicationController
   # GET /counters
   # GET /counters.json
   def index

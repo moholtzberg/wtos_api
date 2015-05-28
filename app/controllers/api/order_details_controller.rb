@@ -1,10 +1,14 @@
-class OrderDetailsController < ApplicationController
+class API::OrderDetailsController < ApplicationController
   # GET /order_datails
   # GET /order_datails.json
   def index
     # equipment = Equipment.find(params[:equipment_id])
     # @order_datails = equipment.order_details
-    @order_detail = OrderDetail.find(["EquipmentID >= ?", params[:equipment_id]])
+    if params[:equipment_id]
+      @order_detail = OrderDetail.find(["EquipmentID >= ?", params[:equipment_id]])
+    elsif params[:order_id]
+      @order_detail = OrderDetail.find(["OrderID >= ?", params[:order_id]])
+    end
     respond_to do |format|
       format.json { render json: @order_datail }
     end
