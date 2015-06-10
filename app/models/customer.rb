@@ -12,6 +12,7 @@ class Customer < ActiveRecord::Base
   scope :slaes_rep, lambda {|rep| { :conditions => ["SalesRepID = ?", rep] }}
   
   has_many :equipments, :foreign_key => :CustomerID
+  has_many :work_orders, :foreign_key => :CustomerID
   
   # attr_accessible :bill_to_name
   

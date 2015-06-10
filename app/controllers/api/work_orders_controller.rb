@@ -2,7 +2,8 @@ class API::WorkOrdersController < ApplicationController
   # GET /orders
   # GET /orders.json
   def index
-    @orders = WorkOrder.all
+    @customer = Customer.find(params[:customer_id])
+    @orders = @customer.work_orders
 
     respond_to do |format|
       format.html # index.html.erb
