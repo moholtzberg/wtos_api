@@ -22,6 +22,7 @@ WtosApi::Application.routes.draw do
       resources :equipments do
         resources :order_details
       end
+      resourrces :work_orders
     end
     resources :leases
     resources :models
